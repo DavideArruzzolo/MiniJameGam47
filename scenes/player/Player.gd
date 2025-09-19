@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 var player_scene: PackedScene = preload("res://scenes/player/Player.tscn")
 
@@ -7,8 +8,8 @@ var can_clone: bool = true
 
 signal interacted_event
 
-func init_clone(clone_num: int, position: Vector2) -> void:
-	global_position = position
+func init_clone(clone_num: int, pos: Vector2) -> void:
+	global_position = pos
 	can_clone = false
 	
 	if(clone_num >= 1):

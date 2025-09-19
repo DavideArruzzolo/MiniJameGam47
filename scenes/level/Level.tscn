@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://d23fh0emtulbt"]
+[gd_scene load_steps=8 format=3 uid="uid://d23fh0emtulbt"]
 
 [ext_resource type="Texture2D" uid="uid://oc3bn3nvcwc7" path="res://asset/graphics/Nuovo progetto (1).png" id="1_751o5"]
 [ext_resource type="Texture2D" uid="uid://buen3w4xvm17u" path="res://asset/graphics/a18acef51f7c8894643c2e5d505492dd.jpg" id="1_l1x8v"]
 [ext_resource type="PackedScene" uid="uid://xirvjsv2xxhk" path="res://scenes/player/Player.tscn" id="2_cne4c"]
+[ext_resource type="PackedScene" uid="uid://d11oeja7nrdi" path="res://scenes/entities/lever.tscn" id="4_reyld"]
+[ext_resource type="PackedScene" uid="uid://h440sw47h6bo" path="res://scenes/entities/button.tscn" id="5_e4y3p"]
+[ext_resource type="PackedScene" uid="uid://cmfy0xxjm72q0" path="res://scenes/entities/door.tscn" id="6_4nqmc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cne4c"]
 size = Vector2(2917.5, 107)
@@ -23,19 +26,6 @@ position = Vector2(-17.6653, -655)
 scale = Vector2(0.103306, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NuovoProgetto(1)/StaticBody2D"]
-position = Vector2(171.25, 655.5)
-shape = SubResource("RectangleShape2D_cne4c")
-
-[node name="NuovoProgetto(1)2" type="Sprite2D" parent="."]
-position = Vector2(-764, 749)
-scale = Vector2(2.827, 1.861)
-texture = ExtResource("1_751o5")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="NuovoProgetto(1)2"]
-position = Vector2(-17.6653, -655)
-scale = Vector2(0.103306, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NuovoProgetto(1)2/StaticBody2D"]
 position = Vector2(171.25, 655.5)
 shape = SubResource("RectangleShape2D_cne4c")
 
@@ -274,4 +264,15 @@ position = Vector2(171.25, 655.5)
 shape = SubResource("RectangleShape2D_cne4c")
 
 [node name="Player" parent="." instance=ExtResource("2_cne4c")]
-position = Vector2(-2161, 716)
+position = Vector2(-1828, 872)
+
+[node name="Lever" parent="." instance=ExtResource("4_reyld")]
+z_index = 1
+position = Vector2(-1486, 661)
+
+[node name="Button" parent="." instance=ExtResource("5_e4y3p")]
+position = Vector2(-2104, 657)
+
+[node name="Door" parent="." node_paths=PackedStringArray("SwitchesToOpen") instance=ExtResource("6_4nqmc")]
+position = Vector2(-2483, 663)
+SwitchesToOpen = [NodePath("../Button"), NodePath("../Lever")]

@@ -4,13 +4,15 @@ class_name Lever
 func onInteract():
 	if (Status):
 		Status = false;
-		# TODO Change Sprite
+		$AnimatedSprite2D.play("default")
 	else:
 		Status = true;
-		# TODO Change Sprite
-	
-func onAreaEntered(player):
-	player.interacted_event += onInteract
+		$AnimatedSprite2D.play("default", -1, true)
 
-func onAreaExited(player):
-	player.interacted_event -= onInteract
+func onBodyEntered(body: Node2D) -> void:
+	if(body is Player):
+		body.interacted_event.connect(onInteract)
+
+func onBodyExited(body: Node2D) -> void:
+	if(body is Player):
+		body.interacted_event.disconnect(onInteract)

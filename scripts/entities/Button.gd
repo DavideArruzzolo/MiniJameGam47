@@ -5,16 +5,18 @@ var clonesInAreaCount = 0;
 
 func checkSetStatus():
 	if (Status && clonesInAreaCount == 0):
-			Status = false
-			# TODO Change Sprite   
+		Status = false
+		$AnimatedSprite2D.frame = 0
 	elif (!Status && clonesInAreaCount > 0):
 		Status = true
-		# TODO Change Sprite
+		$AnimatedSprite2D.frame = 1
 
-func onAreaEntered(player):
-		clonesInAreaCount += 1
-		checkSetStatus()
+func onBodyEntered(body):
+		if(body is Player):
+			clonesInAreaCount += 1
+			checkSetStatus()
 
-func onAreaExited(player):
-		clonesInAreaCount -= 1 
+func onBodyExited(body):
+	if(body is Player):
+		clonesInAreaCount -= 1
 		checkSetStatus()
