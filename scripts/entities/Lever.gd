@@ -10,9 +10,7 @@ func onInteract():
 		# TODO Change Sprite
 	
 func onAreaEntered(player):
-	pass
-	# player.InteractEvent += onInteract
+	player.interacted_event += onInteract
 
 func onAreaExited(player):
-	pass
-	# player.InteractEvent -= onInteract
+	player.interacted_event -= onInteract

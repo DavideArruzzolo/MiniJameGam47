@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://h440sw47h6bo"]
 
-[ext_resource type="Script" path="res://objects/Button.cs" id="1_ck3ch"]
+[ext_resource type="Script" uid="uid://bl7ovjwgdqjym" path="res://scripts/entities/Button.gd" id="1_bg51i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gqmb5"]
 
 [node name="Button" type="Node2D"]
-script = ExtResource("1_ck3ch")
+script = ExtResource("1_bg51i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 

@@ -38,6 +38,8 @@ var has_dashed_in_air: bool = false
 var jumps_made: int = 0
 var facing_direction: float = 1.0
 
+var character_allows_dashing = true;
+
 func _ready() -> void:
 	if not character is CharacterBody2D:
 		push_error("MovementComponent must be a child of a CharacterBody2D.")
@@ -147,6 +149,9 @@ func _on_dash_timer_timeout() -> void:
 	current_state = State.IDLE
 
 func _can_dash() -> bool:
+	if(!character_allows_dashing):
+		return false;
+	
 	var can_air_dash = not character.is_on_floor() and not has_dashed_in_air
 	if can_air_dash:
 		return true

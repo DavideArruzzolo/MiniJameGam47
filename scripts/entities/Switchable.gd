@@ -1,12 +1,12 @@
 extends Node
 class_name Switchable
 
-signal OnStatusChangedEvent(this, status)
+signal StatusChangedEvent(this, status)
 
 var Status: bool:
 		get: return status
 		set(value):
-			emit_signal("OnStatusChangedEvent", self, value)
+			emit_signal("StatusChangedEvent", self, value)
 			status = value
 
 var status = false
