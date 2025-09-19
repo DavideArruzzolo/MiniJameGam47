@@ -2,24 +2,22 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oc3bn3nvcwc7"
-path="res://.godot/imported/Nuovo progetto (1).png-9fff834e41727e93f762d80fb8cb196d.ctex"
+uid="uid://d3aa6iqfi2n2c"
+path="res://.godot/imported/button.png-5329b7462339a850c9314a79bffa2a2a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/graphics/Nuovo progetto (1).png"
-dest_files=["res://.godot/imported/Nuovo progetto (1).png-9fff834e41727e93f762d80fb8cb196d.ctex"]
+source_file="res://asset/entities/button.png"
+dest_files=["res://.godot/imported/button.png-5329b7462339a850c9314a79bffa2a2a.ctex"]
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
-compress/uastc_level=0
-compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0

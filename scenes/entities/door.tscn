@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmfy0xxjm72q0"]
+
+[ext_resource type="Script" uid="uid://sinedx5rhn78" path="res://scripts/entities/Door.gd" id="1_dn7cs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5jtvd"]
+
+[node name="Door" type="Node2D"]
+script = ExtResource("1_dn7cs")
+
+[node name="Hitbox" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_5jtvd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
