@@ -15,14 +15,14 @@ public partial class Lever : Switchable
             Status = true;
             // TODO Change Sprite
         }
-        
+
     }
-    
+
     private void onAreaEntered(Node player)
     {
         // player.InteractEvent += onInteract
     }
-    
+
     private void onAreaExited(Node player)
     {
         // player.InteractEvent -= onInteract

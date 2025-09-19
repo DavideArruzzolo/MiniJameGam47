@@ -25,6 +25,7 @@ animations = [{
 script = ExtResource("1_dn7cs")
 
 [node name="Hitbox" type="StaticBody2D" parent="."]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(8.5, -0.5)

@@ -13,7 +13,7 @@ public partial class Switchable : Node2D
         {
             OnStatusChangedEvent?.Invoke(this, value);
             status = value;
-        }  
+        }
     }
 
     private bool status = false;

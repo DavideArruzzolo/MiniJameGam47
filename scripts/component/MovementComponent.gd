@@ -2,7 +2,9 @@ class_name MovementComponent extends Node
 
 @onready var character: CharacterBody2D = get_parent()
 
-signal state_changed(new_state : String)
+var is_active: bool = false
+
+signal state_changed(new_state: String)
 
 enum State { IDLE, WALK, JUMP, DASH }
 
@@ -39,7 +41,8 @@ var has_dashed_in_air: bool = false
 var jumps_made: int = 0
 var facing_direction: float = 1.0
 
-var character_allows_dashing = true;
+var character_allows_dashing = true
+
 
 func _ready() -> void:
 	if not character is CharacterBody2D:
@@ -47,12 +50,13 @@ func _ready() -> void:
 		return
 	_setup_timers()
 
+
 func _physics_process(delta: float) -> void:
 	if not character:
 		return
-	
+
 	process_input()
-	
+
 	if not character.is_on_floor():
 		character.velocity.y += gravity * delta
 
@@ -66,17 +70,18 @@ func _physics_process(delta: float) -> void:
 		State.DASH:
 			pass
 
-	character.move_and_slide()	
-	
+	character.move_and_slide()
+
 	if character.is_on_floor():
 		coyote_timer.start()
-		has_dashed_in_air = false 
+		has_dashed_in_air = false
 		jumps_made = 0
 		if current_state == State.JUMP:
 			current_state = State.IDLE
 
+
 func _state_idle() -> void:
-	if Input.is_action_just_pressed("dash") and _can_dash():
+	if is_active and Input.is_action_just_pressed("dash") and _can_dash():
 		_perform_dash()
 		return
 	if direction.x != 0:
@@ -84,8 +89,9 @@ func _state_idle() -> void:
 		return
 	character.velocity.x = lerp(character.velocity.x, 0.0, friction)
 
+
 func _state_walk() -> void:
-	if Input.is_action_just_pressed("dash") and _can_dash():
+	if is_active and Input.is_action_just_pressed("dash") and _can_dash():
 		_perform_dash()
 		return
 	if direction.x == 0:
@@ -93,25 +99,29 @@ func _state_walk() -> void:
 		return
 	character.velocity.x = lerp(character.velocity.x, direction.x * speed, acceleration)
 
+
 func _state_jump() -> void:
 	character.velocity.x = lerp(character.velocity.x, direction.x * speed, acceleration)
-	if Input.is_action_just_pressed("dash") and _can_dash():
+	if is_active and Input.is_action_just_pressed("dash") and _can_dash():
 		_perform_dash()
 		return
+
 
 func _get_input_direction() -> void:
 	direction.x = Input.get_axis("move_left", "move_right")
 	if direction.x != 0:
 		facing_direction = sign(direction.x)
 
+
 func _perform_jump() -> void:
 	character.velocity.y = jump_velocity
 	current_state = State.JUMP
 	jumps_made += 1
-	
+
 	if jumps_made == 1:
 		coyote_timer.stop()
 	input_buffer_timer.stop()
+
 
 func _perform_dash() -> void:
 	current_state = State.DASH
@@ -128,11 +138,12 @@ func _perform_dash() -> void:
 	else:
 		dash_cooldown_timer.start()
 
+
 func _setup_timers() -> void:
 	coyote_timer.wait_time = coyote_time
 	coyote_timer.one_shot = true
 	add_child(coyote_timer)
-	
+
 	input_buffer_timer.wait_time = input_buffer_time
 	input_buffer_timer.one_shot = true
 	add_child(input_buffer_timer)
@@ -141,18 +152,20 @@ func _setup_timers() -> void:
 	dash_timer.one_shot = true
 	dash_timer.connect("timeout", _on_dash_timer_timeout)
 	add_child(dash_timer)
-	
+
 	dash_cooldown_timer.wait_time = dash_cooldown
 	dash_cooldown_timer.one_shot = true
 	add_child(dash_cooldown_timer)
 
+
 func _on_dash_timer_timeout() -> void:
 	current_state = State.IDLE
 
+
 func _can_dash() -> bool:
-	if(!character_allows_dashing):
-		return false;
-	
+	if !character_allows_dashing:
+		return false
+
 	var can_air_dash = not character.is_on_floor() and not has_dashed_in_air
 	if can_air_dash:
 		return true
@@ -162,21 +175,32 @@ func _can_dash() -> bool:
 		return true
 	return false
 
+
 func process_input() -> void:
+	if not is_active:
+		direction.x = 0
+		input_buffer_timer.stop()
+		return
+
 	if current_state == State.DASH:
 		direction.x = 0
 		return
 
 	_get_input_direction()
-	
+
 	if Input.is_action_just_pressed("jump"):
 		input_buffer_timer.start()
 
 	if not input_buffer_timer.is_stopped() and _can_jump():
 		_perform_jump()
 
+
 func _can_jump() -> bool:
-	return (not coyote_timer.is_stopped() and max_jumps > 0) or (jumps_made > 0 and jumps_made < max_jumps)
+	return (
+		(not coyote_timer.is_stopped() and max_jumps > 0)
+		or (jumps_made > 0 and jumps_made < max_jumps)
+	)
+
 
 func is_dashing() -> bool:
 	return current_state == State.DASH

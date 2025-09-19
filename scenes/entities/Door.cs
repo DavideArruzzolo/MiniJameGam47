@@ -7,14 +7,14 @@ public partial class Door : Node2D
     // Assign only Switchable - Godot does not allow exporting custom classes, but non-switchable won't work!
     [Export] private Array<Node2D> SwitchesToOpen { get; set; } = new();
     private Dictionary<Switchable, bool> statuses = new();
-    
+
     public override void _Ready()
     {
         foreach (var node in SwitchesToOpen)
         {
             Switchable switchable = (Switchable)node;
             switchable.OnStatusChangedEvent += onStatusChanged;
-            
+
             statuses.Add(switchable, switchable.Status);
         }
     }

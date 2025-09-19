@@ -5,8 +5,10 @@ extends Control
 const MIN_VOLUME_DB = -80.0
 const MAX_VOLUME_DB = 0.0
 
+
 func _ready() -> void:
 	$MenuButtons/HSlider.value = 100
+
 
 func _on_h_slider_value_changed(slider_value: float):
 	print(slider_value)
