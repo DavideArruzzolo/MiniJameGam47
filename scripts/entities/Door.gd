@@ -7,7 +7,7 @@ var statuses = {} # Switchable, bool
 
 func _ready():
 	for switchable in SwitchesToOpen:
-		switchable.OnStatusChangedEvent += onStatusChanged
+		switchable.StatusChangedEvent.connect(onStatusChanged)
 		statuses[switchable] = switchable.Status
 
 func onStatusChanged(changingStatus: Switchable, status: bool):
@@ -16,13 +16,15 @@ func onStatusChanged(changingStatus: Switchable, status: bool):
 
 func checkOpen():
 	var shouldOpen = true;
-	for pair in statuses:
-		if (pair.value == false):
+	for key in statuses.keys():
+		if (statuses[key] == false):
 			shouldOpen = false
 			
 	if (shouldOpen):
-		# TODO Change sprite
-		$Hitbox.set_deferred("disabled", true) # Either this or change layer
+		$AnimatedSprite2D.frame = 1;
+		$Hitbox.set_collision_layer_value(1, 0)
+		$Hitbox.set_collision_mask_value(1, 0)
 	else:
-		# TODO Change sprite
-		$Hitbox.set_deferred("disabled", false)
+		$AnimatedSprite2D.frame = 0;
+		$Hitbox.set_collision_layer_value(1, 1)
+		$Hitbox.set_collision_mask_value(1, 1)

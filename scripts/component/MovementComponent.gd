@@ -176,7 +176,7 @@ func process_input() -> void:
 		_perform_jump()
 
 func _can_jump() -> bool:
-	return not coyote_timer.is_stopped() or (jumps_made > 0 and jumps_made < max_jumps)
+	return (not coyote_timer.is_stopped() and max_jumps > 0) or (jumps_made > 0 and jumps_made < max_jumps)
 
 func is_dashing() -> bool:
 	return current_state == State.DASH
