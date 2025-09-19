@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d23fh0emtulbt"]
+
+[ext_resource type="Texture2D" uid="uid://oc3bn3nvcwc7" path="res://asset/graphics/Nuovo progetto (1).png" id="1_751o5"]
+
+[node name="Level" type="Node2D"]
+
+[node name="NuovoProgetto(1)" type="Sprite2D" parent="."]
+position = Vector2(534, 258)
+texture = ExtResource("1_751o5")
