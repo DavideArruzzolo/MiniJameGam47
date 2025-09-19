@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://beh68acak33ke"]
+
+[ext_resource type="Script" path="res://objects/LevelExit.cs" id="1_kqo1o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbota"]
+
+[node name="LevelExit" type="Area2D"]
+script = ExtResource("1_kqo1o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xbota")
+
+[connection signal="area_entered" from="." to="." method="onAreaEntered"]
+[connection signal="area_exited" from="." to="." method="onAreaExited"]
