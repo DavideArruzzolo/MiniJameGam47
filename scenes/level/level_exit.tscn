@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://beh68acak33ke"]
+[gd_scene load_steps=3 format=3 uid="uid://d3tnsm317nhhg"]
 
-[ext_resource type="Script" uid="uid://cbqkomyesg3eo" path="res://scripts/level/LevelExit.gd" id="1_kdysx"]
+[ext_resource type="Script" path="res://scripts/level/LevelExit.gd" id="1_kdysx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xbota"]
 

@@ -1,0 +1,168 @@
+[gd_scene load_steps=12 format=3 uid="uid://bnxwxn76m10g4"]
+
+[ext_resource type="Script" uid="uid://cwivqrspex8dv" path="res://scripts/ui/Menu.gd" id="1_8s1oy"]
+[ext_resource type="Texture2D" uid="uid://7tis2k56oekk" path="res://asset/graphics/madeBy/broth3rcast.png" id="2_mn42h"]
+[ext_resource type="Texture2D" uid="uid://b1pmnsyq8gtje" path="res://asset/graphics/madeBy/Cubey.png" id="3_3o66m"]
+[ext_resource type="Texture2D" uid="uid://c223sy52cx17e" path="res://asset/graphics/madeBy/Cupcaaake.png" id="4_m4dj8"]
+[ext_resource type="Texture2D" uid="uid://ctqqjtded6tws" path="res://asset/graphics/madeBy/p3anut.png" id="5_h2wd5"]
+[ext_resource type="Texture2D" uid="uid://6q51ya8l63o7" path="res://asset/graphics/madeBy/R3G1S.png" id="6_dwflq"]
+[ext_resource type="Texture2D" uid="uid://46h0iowuqye0" path="res://asset/graphics/madeBy/Senapi.png" id="7_5m6ga"]
+[ext_resource type="Texture2D" uid="uid://f056qnbgfq7u" path="res://asset/graphics/ui/startButton.png" id="8_m4dj8"]
+[ext_resource type="Texture2D" uid="uid://b27kkt4weql33" path="res://asset/graphics/ui/optionsButton.png" id="9_h2wd5"]
+[ext_resource type="Texture2D" uid="uid://c71cehdm50bio" path="res://asset/graphics/ui/resumeButton.png" id="10_dwflq"]
+[ext_resource type="Texture2D" uid="uid://dnwg6twpv4at1" path="res://asset/graphics/itchpause2.png" id="11_h2wd5"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_8s1oy")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MenuButtons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 100.0
+offset_top = -137.5
+offset_right = 350.0
+offset_bottom = 137.5
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="StartButton" type="TextureButton" parent="MenuButtons"]
+layout_mode = 2
+texture_normal = ExtResource("8_m4dj8")
+
+[node name="OptionsButton" type="TextureButton" parent="MenuButtons"]
+layout_mode = 2
+texture_normal = ExtResource("9_h2wd5")
+
+[node name="ExitButton" type="TextureButton" parent="MenuButtons"]
+layout_mode = 2
+texture_normal = ExtResource("10_dwflq")
+
+[node name="MadeBy" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -340.0
+offset_top = -96.0
+offset_right = -20.0
+offset_bottom = -19.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="MadeByText" type="Label" parent="MadeBy"]
+layout_mode = 2
+text = "Made by:"
+horizontal_alignment = 1
+
+[node name="ProfileHolder" type="HBoxContainer" parent="MadeBy"]
+layout_mode = 2
+
+[node name="human" type="LinkButton" parent="MadeBy/ProfileHolder"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+tooltip_text = "USER"
+uri = "https://www.google.com/"
+
+[node name="TextureRect" type="TextureRect" parent="MadeBy/ProfileHolder/human"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_mn42h")
+
+[node name="human2" type="LinkButton" parent="MadeBy/ProfileHolder"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+tooltip_text = "USER"
+uri = "https://www.google.com/"
+
+[node name="TextureRect" type="TextureRect" parent="MadeBy/ProfileHolder/human2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_3o66m")
+
+[node name="human3" type="LinkButton" parent="MadeBy/ProfileHolder"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+tooltip_text = "USER"
+uri = "https://www.google.com/"
+
+[node name="TextureRect" type="TextureRect" parent="MadeBy/ProfileHolder/human3"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_m4dj8")
+
+[node name="human4" type="LinkButton" parent="MadeBy/ProfileHolder"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+tooltip_text = "USER"
+uri = "https://www.google.com/"
+
+[node name="TextureRect" type="TextureRect" parent="MadeBy/ProfileHolder/human4"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_h2wd5")
+
+[node name="human5" type="LinkButton" parent="MadeBy/ProfileHolder"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+tooltip_text = "USER"
+uri = "https://www.google.com/"
+
+[node name="TextureRect" type="TextureRect" parent="MadeBy/ProfileHolder/human5"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_dwflq")
+
+[node name="human6" type="LinkButton" parent="MadeBy/ProfileHolder"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+tooltip_text = "USER"
+uri = "https://www.google.com/"
+
+[node name="TextureRect" type="TextureRect" parent="MadeBy/ProfileHolder/human6"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("7_5m6ga")
+
+[node name="Logo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -672.99994
+offset_top = -108.99999
+offset_right = 158.00024
+offset_bottom = 371.0
+grow_horizontal = 0
+rotation = 0.61086524
+texture = ExtResource("11_h2wd5")
+
+[connection signal="pressed" from="MenuButtons/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MenuButtons/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MenuButtons/ExitButton" to="." method="_on_exit_button_pressed"]

@@ -8,6 +8,7 @@
 size = Vector2(2917.5, 107)
 
 [node name="Level" type="Node2D"]
+position = Vector2(2410, 1392)
 
 [node name="A18Acef51f7c8894643c2e5d505492Dd" type="Sprite2D" parent="."]
 scale = Vector2(3, 3)
@@ -274,4 +275,4 @@ position = Vector2(171.25, 655.5)
 shape = SubResource("RectangleShape2D_cne4c")
 
 [node name="Player" parent="." instance=ExtResource("2_cne4c")]
-position = Vector2(-2161, 716)
+position = Vector2(-1201, -496.00003)

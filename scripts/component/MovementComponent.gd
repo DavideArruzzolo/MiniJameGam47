@@ -2,7 +2,7 @@ class_name MovementComponent extends Node
 
 @onready var character: CharacterBody2D = get_parent()
 
-signal state_changed(new_state)
+signal state_changed(new_state : String)
 
 enum State { IDLE, WALK, JUMP, DASH }
 
@@ -27,7 +27,8 @@ var current_state: State = State.IDLE:
 	set(new_state):
 		if current_state != new_state:
 			current_state = new_state
-			emit_signal("state_changed", current_state)
+			var state_name = State.find_key(new_state)
+			emit_signal("state_changed", state_name)
 
 var direction: Vector2 = Vector2.ZERO
 var coyote_timer: Timer = Timer.new()

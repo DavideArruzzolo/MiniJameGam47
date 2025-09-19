@@ -1,11 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d11oeja7nrdi"]
-
-[ext_resource type="Script" path="res://objects/Lever.cs" id="1_52mx4"]
+[gd_scene load_steps=2 format=3 uid="uid://d11oeja7nrdi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_is4xt"]
 
 [node name="Lever" type="Node2D"]
-script = ExtResource("1_52mx4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 
