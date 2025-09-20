@@ -26,6 +26,7 @@ animations = [{
 size = Vector2(405, 305)
 
 [node name="Lever" type="Node2D"]
+scale = Vector2(0.2, 0.2)
 script = ExtResource("1_pae4l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
