@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dl3jl7ppv34sm"]
+[gd_scene load_steps=10 format=3 uid="uid://dl3jl7ppv34sm"]
 
 [ext_resource type="Script" uid="uid://stsksmgjaipg" path="res://scripts/ui/Options.gd" id="1_anyjn"]
 [ext_resource type="Texture2D" uid="uid://34xq06bkypsy" path="res://asset/graphics/ui/button/backButton.png" id="2_anyjn"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://6q51ya8l63o7" path="res://asset/graphics/ui/madeBy/R3G1S.png" id="6_22j3j"]
 [ext_resource type="Texture2D" uid="uid://46h0iowuqye0" path="res://asset/graphics/ui/madeBy/Senapi.png" id="7_dsr17"]
 [ext_resource type="Texture2D" uid="uid://dnwg6twpv4at1" path="res://asset/graphics/ui/logo/logo.png" id="8_isy4h"]
+[ext_resource type="AudioStream" uid="uid://d0cssa1owvoo2" path="res://asset/audio/sfx/ui/ui-sound.mp3" id="9_ui_sound"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -55,6 +56,10 @@ horizontal_alignment = 1
 
 [node name="HSlider" type="HSlider" parent="MenuButtons"]
 layout_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_ui_sound")
+volume_db = -12.0
 
 [node name="Logo" type="TextureRect" parent="."]
 layout_mode = 1
