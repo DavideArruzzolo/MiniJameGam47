@@ -1,10 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://da82ck3w0m6nu"]
+[gd_scene load_steps=6 format=3 uid="uid://da82ck3w0m6nu"]
 
 [ext_resource type="Script" uid="uid://cj1y4qedc700d" path="res://scripts/ui/EggDisplay.gd" id="1_v8uox"]
-[ext_resource type="Texture2D" uid="uid://8ov2m4b843m5" path="res://asset/graphics/ui/eggDisplayed/eggDisplayed.png" id="2_3av08"]
+[ext_resource type="Texture2D" uid="uid://bhsdqmvqt0cgh" path="res://asset/graphics/ui/eggDisplayed/player.png" id="2_xbjec"]
+[ext_resource type="Texture2D" uid="uid://fdnh12u2k4om" path="res://asset/graphics/ui/eggDisplayed/clone_1.png" id="3_wtajj"]
+[ext_resource type="Texture2D" uid="uid://woac546npe28" path="res://asset/graphics/ui/eggDisplayed/clone_2.png" id="4_eomsh"]
+[ext_resource type="Texture2D" uid="uid://bpi7litir1odf" path="res://asset/graphics/ui/eggDisplayed/clone_3.png" id="5_5q2e7"]
 
 [node name="EggDisplay" type="CanvasLayer"]
 script = ExtResource("1_v8uox")
+player_texture = ExtResource("2_xbjec")
+clone_1_texture = ExtResource("3_wtajj")
+clone_2_texture = ExtResource("4_eomsh")
+clone_3_texture = ExtResource("5_5q2e7")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 1
@@ -23,7 +30,6 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("2_3av08")
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

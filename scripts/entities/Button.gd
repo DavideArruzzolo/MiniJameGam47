@@ -4,6 +4,7 @@ class_name ObjButton
 @export var tile_map_node: TileMap
 @export var cells_to_erase: Array[Vector2i]
 @export var tile_map_layer_index: int = 0
+@export var allowed_clone_type: String = ""
 
 var clonesInAreaCount = 0
 
@@ -16,19 +17,18 @@ func checkSetStatus():
 		Status = true
 		$AnimatedSprite2D.frame = 1
 		$AudioStreamPlayer.play()
-		if tile_map_node and not cells_to_erase.is_empty():
-			call_deferred("erase_cells_with_autotile", cells_to_erase)
-	
 
 func onBodyEntered(body):
-	if body is Player:
-		clonesInAreaCount += 1
-		checkSetStatus()
+	clonesInAreaCount += 1
+	checkSetStatus()
+	if(body.name == allowed_clone_type):
+		if tile_map_node and not cells_to_erase.is_empty():
+			call_deferred("erase_cells_with_autotile", cells_to_erase)
 
 func onBodyExited(body):
-	if body is Player:
-		clonesInAreaCount -= 1
-		checkSetStatus()
+	clonesInAreaCount -= 1
+	checkSetStatus()
 
 func erase_cells_with_autotile(cells: Array[Vector2i]) -> void:
-		tile_map_node.set_cells_terrain_connect(tile_map_layer_index, cells, 0, 1)
+	for cell in cells:
+		tile_map_node.set_cell(tile_map_layer_index, cell, -1)

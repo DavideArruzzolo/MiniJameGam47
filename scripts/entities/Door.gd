@@ -1,9 +1,8 @@
 extends Area2D
 class_name Door
 
-# Assign only Switchable - Godot does not allow exporting custom classes, but non-switchable won't work!
 @export var SwitchesToOpen: Array[Node2D] = []
-var statuses = {}  # Switchable, bool
+var statuses = {} 
 
 
 func _ready():
@@ -26,11 +25,11 @@ func checkOpen():
 
 	if shouldOpen:
 		$AnimatedSprite2D.frame = 1
-		if $CollisionShape2D: # The CollisionShape2D itself doesn't have collision layers/masks, its parent (the Area2D) does.
+		if $CollisionShape2D:
 			set_collision_layer_value(1, 0)
 			set_collision_mask_value(1, 0)
 	else:
 		$AnimatedSprite2D.frame = 0
-		if $CollisionShape2D: # The CollisionShape2D itself doesn't have collision layers/masks, its parent (the Area2D) does.
+		if $CollisionShape2D:
 			set_collision_layer_value(1, 1)
 			set_collision_mask_value(1, 1)

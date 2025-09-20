@@ -5,14 +5,13 @@ signal player_switched(player_name, player_color)
 
 var players = []
 var current_player_index = -1
-var global_clone_generation_counter: int = 0 # New global counter for clone generation
+var global_clone_generation_counter: int = 0
 
 var current_egg = "Default"
 
 
 
 func _ready():
-	# Imposta l'uovo iniziale e notifica la UI
 	set_current_egg(current_egg)
 
 
