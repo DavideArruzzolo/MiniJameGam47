@@ -14,53 +14,6 @@
 [ext_resource type="AudioStream" uid="uid://koejhrb4asri" path="res://asset/audio/sfx/player_and_clone/dash.wav" id="7_dash_wav"]
 [ext_resource type="AudioStream" uid="uid://dby6kdoktm3yl" path="res://asset/audio/sfx/player_and_clone/walk.mp3" id="8_walk_mp3"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_4kuee"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_npwbq")
-}],
-"loop": true,
-"name": &"dash",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_v42im")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_7oing")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_5stf6")
-}],
-"loop": true,
-"name": &"jump",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_c3xxp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_npwbq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_v42im")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_pn6s4")
-}],
-"loop": true,
-"name": &"walk",
-"speed": 4.0
-}]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3xxp"]
 size = Vector2(290, 435)
 
@@ -74,7 +27,6 @@ collision_mask = 13
 script = ExtResource("1_4kuee")
 
 [node name="Texture" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_4kuee")
 animation = &"jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -9,7 +9,7 @@ var player_scene: PackedScene = preload("res://scenes/player/Player.tscn")
 @onready var audio_dash: AudioStreamPlayer2D = $AudioStreamPlayerDash
 @onready var audio_walk: AudioStreamPlayer2D = $AudioStreamPlayerWalk
 
-var clone_generation: int = 0
+var clone_generation: int # No longer initialized here, will be set in init_clone
 var can_clone: bool = true
 
 var is_active: bool = false
@@ -19,11 +19,17 @@ signal interacted_event
 
 var clone_colors = [Color("ff0000ff"), Color("00ff00ff"), Color("000000ff")]  # Red  # Green  # Blue
 
+var clone_1_animations: SpriteFrames = preload("res://asset/resources/clone_1_animations.tres")
+var clone_2_animations: SpriteFrames = preload("res://asset/resources/clone_2_animations.tres")
+var clone_3_animations: SpriteFrames = preload("res://asset/resources/clone_3_animations.tres")
+var player_animations: SpriteFrames = preload("res://asset/resources/player_animations.tres")
+
 
 func _ready():
 	PlayerManager.register_player(self)
 	$MovementComponent.dash_started.connect(_on_dash_started)
 	if not is_clone:
+		texture.sprite_frames = player_animations # Assign player animations
 		$PlayerTrigger.monitoring = false
 		$PlayerTrigger.get_node("CollisionShape2D").disabled = true
 		# Set collision for original player
@@ -54,26 +60,33 @@ func deactivate():
 
 func init_clone(pos: Vector2, generation: int) -> void:
 	is_clone = true
+	self.clone_generation = generation # Assign the global generation to this instance
 	pos.x -= 50
 	global_position = pos
-	can_clone = false
-	if generation > 0 && generation <= clone_colors.size():
-		texture.modulate = clone_colors[generation - 1]
+	# can_clone = false # Removed to allow any active player to create the next clone
+
+	# Set clone specific animations
+	match generation:
+		1:
+			texture.sprite_frames = clone_1_animations
+			$MovementComponent.max_jumps = 1 # Il clone 1 non può fare il doppio salto
+		2:
+			texture.sprite_frames = clone_2_animations
+			$MovementComponent.max_jumps = 1 # Il clone 2 può fare solo un salto
+			$MovementComponent.character_allows_dashing = false # Il clone 2 non può fare il dash
+		3:
+			texture.sprite_frames = clone_3_animations
+			$MovementComponent.max_jumps = 0 # Il clone 3 non può saltare
+			$MovementComponent.character_allows_dashing = false # Il clone 3 non può fare il dash
 
 	# --- Applica le restrizioni in base alla generazione ---
-	if generation == 1:
-		# Il clone 1 non può fare il doppio salto
-		$MovementComponent.max_jumps = 1
-	elif generation == 2:
-		# Il clone 2 non può fare il dash
-		$MovementComponent.character_allows_dashing = false
-	elif generation == 3:
-		# Il clone 3 non può saltare
-		$MovementComponent.max_jumps = 0
+	# (These are now handled within the match statement above)
 
 	# --- Impostazione Layer di Collisione ---
 	# 1. Pulisce i layer esistenti. Il clone non deve stare sul layer "player".
 	collision_layer = 0
+
+	update_animation() # Ensure animation is set after sprite_frames are assigned
 
 	# 2. Assegna il clone al suo layer unico.
 	#    Assumiamo che i layer per i cloni inizino dal 4 ("clone1").
@@ -106,11 +119,11 @@ func _physics_process(_delta):
 
 
 func clone() -> void:
-	clone_generation += 1
+	var next_generation = PlayerManager.get_next_clone_generation()
 
 	var instance = player_scene.instantiate()
 	get_parent().add_child(instance)
-	instance.init_clone(global_position, clone_generation)
+	instance.init_clone(global_position, next_generation)
 
 	# Automatically switch control to the new clone
 	PlayerManager.set_active_character(instance)
@@ -118,7 +131,8 @@ func clone() -> void:
 
 func update_animation() -> void:
 	if $MovementComponent.is_dashing():
-		texture.play("dash")
+		if texture.sprite_frames.has_animation("dash"):
+			texture.play("dash")
 		return
 
 	if velocity.x < 0:
@@ -127,14 +141,21 @@ func update_animation() -> void:
 		texture.flip_h = false
 
 	if not is_on_floor():
-		texture.play("jump")
+		if texture.sprite_frames.has_animation("jump"):
+			texture.play("jump")
+		elif texture.sprite_frames.has_animation("idle"):
+			texture.play("idle") # Fallback to idle if no jump animation
 	else: # is_on_floor()
 		if abs(velocity.x) > 10.0:
-			texture.play("walk")
-			if not audio_walk.playing:
-				audio_walk.play()
+			if texture.sprite_frames.has_animation("walk"):
+				texture.play("walk")
+				if not audio_walk.playing:
+					audio_walk.play()
+			elif texture.sprite_frames.has_animation("idle"):
+				texture.play("idle") # Fallback to idle if no walk animation
 		else:
-			texture.play("idle")
+			if texture.sprite_frames.has_animation("idle"):
+				texture.play("idle")
 			if audio_walk.playing:
 				audio_walk.stop()
 

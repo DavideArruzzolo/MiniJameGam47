@@ -5,6 +5,7 @@ signal player_switched(player_name, player_color)
 
 var players = []
 var current_player_index = -1
+var global_clone_generation_counter: int = 0 # New global counter for clone generation
 
 var current_egg = "Default"
 
@@ -18,6 +19,11 @@ func _ready():
 func set_current_egg(egg_name):
 	current_egg = egg_name
 	emit_signal("egg_changed", current_egg)
+
+
+func get_next_clone_generation() -> int:
+	global_clone_generation_counter += 1
+	return global_clone_generation_counter
 
 
 func _input(event):

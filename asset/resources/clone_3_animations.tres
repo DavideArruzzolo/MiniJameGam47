@@ -1,0 +1,45 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://rndq0ng7gc07"]
+
+[ext_resource type="Texture2D" uid="uid://bka2tb1r2s7cn" path="res://asset/graphics/clone_3/idle/idle.png" id="1_qe0ul"]
+[ext_resource type="Texture2D" uid="uid://bouwk3ida6yiy" path="res://asset/graphics/clone_3/walk/walk_1.png" id="1_walk_1"]
+[ext_resource type="Texture2D" uid="uid://bfwqugc4q21vm" path="res://asset/graphics/clone_3/walk/walk_2.png" id="1_walk_2"]
+[ext_resource type="Texture2D" uid="uid://cgs3ow7lgovmb" path="res://asset/graphics/clone_3/walk/walk_3.png" id="1_walk_3"]
+[ext_resource type="Texture2D" uid="uid://ck70vf4umps21" path="res://asset/graphics/clone_3/walk/walk_4.png" id="1_walk_4"]
+
+[resource]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"dash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qe0ul")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_walk_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_walk_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_walk_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_walk_4")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 4.0
+}]
