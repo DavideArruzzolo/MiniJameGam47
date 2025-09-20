@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c7n34whllcbuv"
+path="res://.godot/imported/Egg Menu.mp3-29ef9998b9be942ab0ae7b93cecea225.mp3str"
+
+[deps]
+
+source_file="res://asset/audio/music/Egg Menu.mp3"
+dest_files=["res://.godot/imported/Egg Menu.mp3-29ef9998b9be942ab0ae7b93cecea225.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
