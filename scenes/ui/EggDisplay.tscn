@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://da82ck3w0m6nu"]
 
 [ext_resource type="Script" uid="uid://cj1y4qedc700d" path="res://scripts/ui/EggDisplay.gd" id="1_v8uox"]
-[ext_resource type="Texture2D" uid="uid://8ov2m4b843m5" path="res://asset/graphics/ui/imageDisplay.png" id="2_3av08"]
+[ext_resource type="Texture2D" uid="uid://8ov2m4b843m5" path="res://asset/graphics/ui/eggDisplayed/eggDisplayed.png" id="2_3av08"]
 
 [node name="EggDisplay" type="CanvasLayer"]
 script = ExtResource("1_v8uox")

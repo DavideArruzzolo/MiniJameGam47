@@ -8,9 +8,11 @@ func checkSetStatus():
 	if Status && clonesInAreaCount == 0:
 		Status = false
 		$AnimatedSprite2D.frame = 0
+		$AudioStreamPlayer.play()
 	elif !Status && clonesInAreaCount > 0:
 		Status = true
 		$AnimatedSprite2D.frame = 1
+		$AudioStreamPlayer.play()
 
 
 func onBodyEntered(body):

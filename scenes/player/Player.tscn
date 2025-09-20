@@ -1,15 +1,18 @@
-[gd_scene load_steps=14 format=3 uid="uid://xirvjsv2xxhk"]
+[gd_scene load_steps=17 format=3 uid="uid://xirvjsv2xxhk"]
 
-[ext_resource type="Script" uid="uid://cj3nowpukfusp" path="res://scenes/player/Player.gd" id="1_4kuee"]
+[ext_resource type="Script" uid="uid://cj3nowpukfusp" path="res://scripts/player/Player.gd" id="1_4kuee"]
 [ext_resource type="Script" uid="uid://ckndyg00jp5j4" path="res://scripts/component/MovementComponent.gd" id="1_wr5hl"]
-[ext_resource type="Texture2D" uid="uid://bxf40uac1ej4s" path="res://asset/entities/Player/Walk/walk1.png" id="2_c3xxp"]
-[ext_resource type="Texture2D" uid="uid://slime8pjehj2" path="res://asset/entities/Player/dash/dash.png" id="2_npwbq"]
-[ext_resource type="Texture2D" uid="uid://t80mcv6u6cnj" path="res://asset/entities/Player/Walk/walk2.png" id="3_npwbq"]
-[ext_resource type="Texture2D" uid="uid://cjhhelf5gubc" path="res://asset/entities/Player/idle/idle.png" id="3_v42im"]
-[ext_resource type="Texture2D" uid="uid://c6u85r6qigeil" path="res://asset/entities/Player/jump/jump1.png" id="4_7oing"]
-[ext_resource type="Texture2D" uid="uid://gwcsevtpfdlc" path="res://asset/entities/Player/Walk/walk3.png" id="4_v42im"]
-[ext_resource type="Texture2D" uid="uid://drs2m3ttfgvl5" path="res://asset/entities/Player/jump/jump2.png" id="5_5stf6"]
-[ext_resource type="Texture2D" uid="uid://doqx1y4cs404a" path="res://asset/entities/Player/Walk/walk4.png" id="5_pn6s4"]
+[ext_resource type="Texture2D" uid="uid://bxf40uac1ej4s" path="res://asset/graphics/player/Walk/walk1.png" id="2_c3xxp"]
+[ext_resource type="Texture2D" uid="uid://slime8pjehj2" path="res://asset/graphics/player/dash/dash.png" id="2_npwbq"]
+[ext_resource type="Texture2D" uid="uid://t80mcv6u6cnj" path="res://asset/graphics/player/Walk/walk2.png" id="3_npwbq"]
+[ext_resource type="Texture2D" uid="uid://cjhhelf5gubc" path="res://asset/graphics/player/idle/idle.png" id="3_v42im"]
+[ext_resource type="Texture2D" uid="uid://c6u85r6qigeil" path="res://asset/graphics/player/jump/jump1.png" id="4_7oing"]
+[ext_resource type="Texture2D" uid="uid://gwcsevtpfdlc" path="res://asset/graphics/player/Walk/walk3.png" id="4_v42im"]
+[ext_resource type="Texture2D" uid="uid://drs2m3ttfgvl5" path="res://asset/graphics/player/jump/jump2.png" id="5_5stf6"]
+[ext_resource type="Texture2D" uid="uid://doqx1y4cs404a" path="res://asset/graphics/player/Walk/walk4.png" id="5_pn6s4"]
+[ext_resource type="AudioStream" uid="uid://cqewdv82fci7q" path="res://asset/audio/sfx/player_and_clone/jump.wav" id="6_jump_wav"]
+[ext_resource type="AudioStream" uid="uid://koejhrb4asri" path="res://asset/audio/sfx/player_and_clone/dash.wav" id="7_dash_wav"]
+[ext_resource type="AudioStream" uid="uid://dby6kdoktm3yl" path="res://asset/audio/sfx/player_and_clone/walk.mp3" id="8_walk_mp3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4kuee"]
 animations = [{
@@ -59,10 +62,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3xxp"]
-size = Vector2(291, 478)
+size = Vector2(290, 435)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g8w66"]
-size = Vector2(301, 488)
+size = Vector2(295, 436)
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.2, 0.2)
@@ -71,26 +74,34 @@ collision_mask = 13
 script = ExtResource("1_4kuee")
 
 [node name="Texture" type="AnimatedSprite2D" parent="."]
-position = Vector2(-10, -3)
 sprite_frames = SubResource("SpriteFrames_4kuee")
 animation = &"jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8.5, 10)
+position = Vector2(0, 54.999996)
 shape = SubResource("RectangleShape2D_c3xxp")
-
-[node name="MovementComponent" type="Node" parent="."]
-script = ExtResource("1_wr5hl")
-jump_velocity = -512.0
-metadata/_custom_type_script = "uid://ckndyg00jp5j4"
 
 [node name="PlayerTrigger" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerTrigger"]
-position = Vector2(8.5, 15)
+position = Vector2(0, 54.999996)
 shape = SubResource("RectangleShape2D_g8w66")
 
-[connection signal="state_changed" from="MovementComponent" to="." method="_on_movement_component_state_changed"]
+[node name="MovementComponent" type="Node" parent="."]
+script = ExtResource("1_wr5hl")
+jump_velocity = -512.0
+metadata/_custom_type_script = "uid://ckndyg00jp5j4"
+
+[node name="AudioStreamPlayerJump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_jump_wav")
+
+[node name="AudioStreamPlayerDash" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_dash_wav")
+
+[node name="AudioStreamPlayerWalk" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_walk_mp3")
+
 [connection signal="body_exited" from="PlayerTrigger" to="." method="_on_player_exited"]
+[connection signal="state_changed" from="MovementComponent" to="." method="_on_movement_component_state_changed"]

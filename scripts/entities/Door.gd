@@ -26,11 +26,11 @@ func checkOpen():
 
 	if shouldOpen:
 		$AnimatedSprite2D.frame = 1
-		if $Hitbox:
-			$Hitbox.set_collision_layer_value(1, 0)
-			$Hitbox.set_collision_mask_value(1, 0)
+		if $CollisionShape2D: # The CollisionShape2D itself doesn't have collision layers/masks, its parent (the Area2D) does.
+			set_collision_layer_value(1, 0)
+			set_collision_mask_value(1, 0)
 	else:
 		$AnimatedSprite2D.frame = 0
-		if $Hitbox:
-			$Hitbox.set_collision_layer_value(1, 1)
-			$Hitbox.set_collision_mask_value(1, 1)
+		if $CollisionShape2D: # The CollisionShape2D itself doesn't have collision layers/masks, its parent (the Area2D) does.
+			set_collision_layer_value(1, 1)
+			set_collision_mask_value(1, 1)

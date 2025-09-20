@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://h440sw47h6bo"]
+[gd_scene load_steps=7 format=3 uid="uid://h440sw47h6bo"]
 
 [ext_resource type="Script" uid="uid://bl7ovjwgdqjym" path="res://scripts/entities/Button.gd" id="1_bg51i"]
-[ext_resource type="Texture2D" uid="uid://d3aa6iqfi2n2c" path="res://asset/entities/button.png" id="2_j77s7"]
-[ext_resource type="Texture2D" uid="uid://brpg4yfe40txc" path="res://asset/entities/button_pressed.png" id="3_45he7"]
+[ext_resource type="Texture2D" uid="uid://d3aa6iqfi2n2c" path="res://asset/graphics/entity/button/button.png" id="2_j77s7"]
+[ext_resource type="Texture2D" uid="uid://brpg4yfe40txc" path="res://asset/graphics/entity/button/button_pressed.png" id="3_45he7"]
+[ext_resource type="AudioStream" uid="uid://di6w4dyecwq08" path="res://asset/audio/sfx/entity/button.wav" id="4_button_sfx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jn6fl"]
 animations = [{
@@ -26,6 +27,10 @@ script = ExtResource("1_bg51i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jn6fl")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_button_sfx")
+volume_db = -12.0
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4

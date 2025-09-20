@@ -5,9 +5,11 @@ func onInteract():
 	if Status:
 		Status = false
 		$AnimatedSprite2D.play("default")
+		$AudioStreamPlayer.play()
 	else:
 		Status = true
 		$AnimatedSprite2D.play("default", -1, true)
+		$AudioStreamPlayer.play()
 
 func onBodyEntered(body: Node2D) -> void:
 	if body is Player:

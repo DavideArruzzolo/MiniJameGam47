@@ -7,14 +7,15 @@ const MAX_VOLUME_DB = 0.0
 
 
 func _ready() -> void:
-	$MenuButtons/HSlider.value = 100
+	$MenuButtons/HSlider.value = 5 # Initial slider value at 5%
 
 
 func _on_h_slider_value_changed(slider_value: float):
-	BackgroundMusic.volume_db = remap(slider_value, 0.0, 100.0, MIN_VOLUME_DB, MAX_VOLUME_DB)
 	if slider_value == 0:
+		BackgroundMusic.volume_db = MIN_VOLUME_DB
 		BackgroundMusic.stream_paused = true
 	else:
+		BackgroundMusic.volume_db = linear_to_db(slider_value / 100.0)
 		BackgroundMusic.stream_paused = false
 
 

@@ -5,6 +5,7 @@ class_name MovementComponent extends Node
 var is_active: bool = false
 
 signal state_changed(new_state: String)
+signal dash_started
 
 enum State { IDLE, WALK, JUMP, DASH }
 
@@ -125,6 +126,7 @@ func _perform_jump() -> void:
 
 func _perform_dash() -> void:
 	current_state = State.DASH
+	dash_started.emit()
 	dash_timer.start()
 
 	var dash_direction = sign(direction.x)
