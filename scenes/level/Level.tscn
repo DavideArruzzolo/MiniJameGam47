@@ -446,29 +446,27 @@ tile_set = SubResource("TileSet_8onpu")
 
 [node name="Player" parent="." instance=ExtResource("2_cne4c")]
 position = Vector2(-321, 54)
+scale = Vector2(0.2, 0.2)
 
 [node name="Lever" parent="." instance=ExtResource("4_reyld")]
 z_index = 1
-position = Vector2(-124, 116)
-scale = Vector2(0.2, 0.2)
+position = Vector2(-123, 116)
 
 [node name="Lever2" parent="." instance=ExtResource("4_reyld")]
 z_index = 1
 position = Vector2(94, 190)
-scale = Vector2(0.2, 0.2)
 
 [node name="Lever3" parent="." instance=ExtResource("4_reyld")]
 z_index = 1
 position = Vector2(397, 184)
-scale = Vector2(0.2, 0.2)
 
 [node name="Button" parent="." instance=ExtResource("5_e4y3p")]
 position = Vector2(543, 192)
 scale = Vector2(0.2, 0.2)
 
 [node name="Door" parent="." node_paths=PackedStringArray("SwitchesToOpen") instance=ExtResource("6_4nqmc")]
-position = Vector2(-577, 195)
-scale = Vector2(0.2, 0.2)
+position = Vector2(-564, 178)
+scale = Vector2(0.3, 0.3)
 SwitchesToOpen = [NodePath("../Button"), NodePath("../Lever")]
 
 [node name="LevelManager" type="Node" parent="."]
