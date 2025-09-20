@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://bdgsj42uur58y"]
+[gd_scene load_steps=18 format=4 uid="uid://dsi33c0u5unw0"]
 
 [ext_resource type="Texture2D" uid="uid://6jrftd2ew74n" path="res://asset/graphics/tiles/level_1/itchbg2.png" id="1_tdyns"]
 [ext_resource type="Texture2D" uid="uid://q7hcrsstacxq" path="res://asset/graphics/tiles/level_1/itchtile3.png" id="2_xtrai"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://d11oeja7nrdi" path="res://scenes/entities/lever.tscn" id="7_2bpoj"]
 [ext_resource type="PackedScene" uid="uid://h440sw47h6bo" path="res://scenes/entities/button.tscn" id="8_0l41j"]
 [ext_resource type="PackedScene" uid="uid://cmfy0xxjm72q0" path="res://scenes/entities/door.tscn" id="9_g08qu"]
+[ext_resource type="Script" uid="uid://btvv0j28b5udu" path="res://scripts/level/LevelManager.gd" id="10_xtrai"]
+[ext_resource type="PackedScene" uid="uid://dnlv2n6x2f6gq" path="res://scenes/entities/LevelExit.tscn" id="11_5jolo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h4ebu"]
 texture = ExtResource("2_xtrai")
@@ -73,7 +75,6 @@ tile_set = SubResource("TileSet_0p1ab")
 
 [node name="Player" parent="." instance=ExtResource("6_xesjk")]
 position = Vector2(-1168, 411)
-scale = Vector2(0.2, 0.2)
 
 [node name="Lever" parent="." instance=ExtResource("7_2bpoj")]
 z_index = 1
@@ -97,4 +98,13 @@ scale = Vector2(0.2, 0.2)
 [node name="Door" parent="." node_paths=PackedStringArray("SwitchesToOpen") instance=ExtResource("9_g08qu")]
 position = Vector2(1249, 435)
 scale = Vector2(0.2, 0.2)
-SwitchesToOpen = [NodePath(""), NodePath("")]
+SwitchesToOpen = [null, null]
+
+[node name="LevelManager" type="Node" parent="."]
+script = ExtResource("10_xtrai")
+metadata/_custom_type_script = "uid://btvv0j28b5udu"
+
+[node name="LevelExit" parent="LevelManager" instance=ExtResource("11_5jolo")]
+position = Vector2(-942, 394)
+
+[connection signal="complete_level" from="LevelManager/LevelExit" to="LevelManager" method="complete_level"]

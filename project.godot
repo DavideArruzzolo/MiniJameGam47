@@ -25,9 +25,9 @@ run/bg_color=Color(0, 0, 0, 1)
 
 [autoload]
 
-GameManager="*res://scripts/game_manager.gd"
 BackgroundMusic="*res://BackgroundMusic.tscn"
 PlayerManager="*res://scripts/player_manager.gd"
+GameManager="*res://scenes/GameManager.tscn"
 
 [display]
 

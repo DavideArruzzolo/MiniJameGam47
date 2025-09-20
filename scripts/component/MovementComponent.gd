@@ -9,15 +9,15 @@ signal state_changed(new_state: String)
 enum State { IDLE, WALK, JUMP, DASH }
 
 @export_group("Speed and Movement")
-@export var speed: float = 600.0
+@export var speed: float = 300.0
 @export var acceleration: float = 0.25
 @export var friction: float = 0.1
 @export var gravity: float = 980.0
-@export var jump_velocity: float = -800.0
+@export var jump_velocity: float = -400.0
 @export var max_jumps: int = 2
 
 @export_group("Dash")
-@export var dash_speed: float = 1200.0
+@export var dash_speed: float = 500.0
 @export var dash_duration: float = 0.2
 @export var dash_cooldown: float = 1.0
 

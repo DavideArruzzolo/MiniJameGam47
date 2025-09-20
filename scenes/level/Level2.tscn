@@ -9,8 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://d11oeja7nrdi" path="res://scenes/entities/lever.tscn" id="7_0xu7s"]
 [ext_resource type="PackedScene" uid="uid://h440sw47h6bo" path="res://scenes/entities/button.tscn" id="8_gfx2r"]
 [ext_resource type="PackedScene" uid="uid://cmfy0xxjm72q0" path="res://scenes/entities/door.tscn" id="9_7d3s0"]
-[ext_resource type="Script" uid="uid://cbqkomyesg3eo" path="res://scripts/level/LevelExit.gd" id="10_y7wfa"]
-[ext_resource type="PackedScene" uid="uid://d23fh0emtulbt" path="res://scenes/level/Level.tscn" id="11_fmhhv"]
+[ext_resource type="Script" uid="uid://btvv0j28b5udu" path="res://scripts/level/LevelManager.gd" id="10_abcde"]
+[ext_resource type="PackedScene" uid="uid://dnlv2n6x2f6gq" path="res://scenes/entities/LevelExit.tscn" id="11_fmhhv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1gue"]
 texture = ExtResource("2_y7wfa")
@@ -75,7 +75,6 @@ tile_set = SubResource("TileSet_ti4pp")
 
 [node name="Player" parent="." instance=ExtResource("6_q0u4y")]
 position = Vector2(-1167.9999, 411)
-scale = Vector2(0.2, 0.2)
 
 [node name="Lever" parent="." instance=ExtResource("7_0xu7s")]
 z_index = 1
@@ -101,10 +100,11 @@ position = Vector2(1285, 432)
 scale = Vector2(0.2, 0.2)
 SwitchesToOpen = [NodePath("../Button"), NodePath("../Lever")]
 
-[node name="LevelExit" type="Area2D" parent="."]
-position = Vector2(1261, 462)
-script = ExtResource("10_y7wfa")
-nextLevel = ExtResource("11_fmhhv")
-metadata/_custom_type_script = "uid://cbqkomyesg3eo"
+[node name="LevelManager" type="Node" parent="."]
+script = ExtResource("10_abcde")
+metadata/_custom_type_script = "uid://btvv0j28b5udu"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelExit"]
+[node name="LevelExit" parent="LevelManager" instance=ExtResource("11_fmhhv")]
+position = Vector2(-961, 381)
+
+[connection signal="complete_level" from="LevelManager/LevelExit" to="LevelManager" method="complete_level"]
