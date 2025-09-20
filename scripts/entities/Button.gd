@@ -5,6 +5,23 @@ class_name ObjButton
 @export var cells_to_erase: Array[Vector2i]
 @export var tile_map_layer_index: int = 0
 @export var allowed_clone_type: String = ""
+@export var egg_sprite_texture: Texture2D
+
+var egg_sprite_node: Sprite2D
+
+func _ready():
+	egg_sprite_node = Sprite2D.new()
+	add_child(egg_sprite_node)
+	egg_sprite_node.position = Vector2(0, -90) # This position might need adjustment in the editor
+	egg_sprite_node.scale = Vector2(3,3)
+	update_egg_sprite()
+
+func update_egg_sprite():
+	if egg_sprite_texture:
+		egg_sprite_node.texture = egg_sprite_texture
+		egg_sprite_node.visible = (allowed_clone_type != "")
+	else:
+		egg_sprite_node.visible = false
 
 var clonesInAreaCount = 0
 
@@ -31,4 +48,4 @@ func onBodyExited(body):
 
 func erase_cells_with_autotile(cells: Array[Vector2i]) -> void:
 	for cell in cells:
-		tile_map_node.set_cell(tile_map_layer_index, cell, -1)
+		tile_map_node.set_cells_terrain_connect(0, cells, 0, 1)

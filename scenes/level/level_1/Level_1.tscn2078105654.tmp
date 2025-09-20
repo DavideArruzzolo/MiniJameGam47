@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://d01jtm183y5ld"]
+[gd_scene load_steps=9 format=3 uid="uid://d01jtm183y5ld"]
 
 [ext_resource type="Script" uid="uid://btvv0j28b5udu" path="res://scripts/level/LevelManager.gd" id="1_h4gk0"]
 [ext_resource type="PackedScene" uid="uid://dnlv2n6x2f6gq" path="res://scenes/entities/LevelExit.tscn" id="2_i8xgn"]
 [ext_resource type="PackedScene" uid="uid://xirvjsv2xxhk" path="res://scenes/player/Player.tscn" id="3_i8xgn"]
-[ext_resource type="Texture2D" uid="uid://bpi7litir1odf" path="res://asset/graphics/ui/eggDisplayed/clone_3.png" id="5_rt1lu"]
 [ext_resource type="PackedScene" uid="uid://d11oeja7nrdi" path="res://scenes/entities/lever.tscn" id="5_tujrl"]
 [ext_resource type="PackedScene" uid="uid://cmfy0xxjm72q0" path="res://scenes/entities/door.tscn" id="6_1dky0"]
 [ext_resource type="Texture2D" uid="uid://fdnh12u2k4om" path="res://asset/graphics/ui/eggDisplayed/clone_1.png" id="7_g8gcf"]
@@ -29,8 +28,6 @@ zoom = Vector2(0.5, 0.5)
 
 [node name="Lever" parent="." instance=ExtResource("5_tujrl")]
 position = Vector2(-911.99994, -615.99994)
-allowed_clone_type = "clone_1"
-egg_sprite_texture = ExtResource("5_rt1lu")
 
 [node name="Lever2" parent="." instance=ExtResource("5_tujrl")]
 position = Vector2(807.99976, -551.99994)
