@@ -13,5 +13,5 @@ func LoadLevel(newLevel: PackedScene):
 	currentLevel = instance
 
 func ChangeLevel(newLevel: PackedScene):
-	remove_child(currentLevel)
+	remove_child(currentLevel)s
 	LoadLevel(newLevel)

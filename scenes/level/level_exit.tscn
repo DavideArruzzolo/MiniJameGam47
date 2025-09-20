@@ -3,12 +3,14 @@
 [ext_resource type="Script" uid="uid://cbqkomyesg3eo" path="res://scripts/level/LevelExit.gd" id="1_kdysx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xbota"]
-size = Vector2(34, 58)
+size = Vector2(66, 100)
 
-[node name="LevelExit" type="Area2D"]
+[node name="LevelExit" type="Node2D"]
 script = ExtResource("1_kdysx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_xbota")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

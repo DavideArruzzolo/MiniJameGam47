@@ -8,8 +8,9 @@ var statuses = {}  # Switchable, bool
 
 func _ready():
 	for switchable in SwitchesToOpen:
-		switchable.StatusChangedEvent.connect(onStatusChanged)
-		statuses[switchable] = switchable.Status
+		if switchable != null:
+			switchable.StatusChangedEvent.connect(onStatusChanged)
+			statuses[switchable] = switchable.Status
 
 
 func onStatusChanged(changingStatus: Switchable, status: bool):

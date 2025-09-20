@@ -103,5 +103,5 @@ scale = Vector2(0.2, 0.2)
 SwitchesToOpen = [NodePath("../Button"), NodePath("../Lever")]
 
 [node name="LevelExit" parent="." instance=ExtResource("10_8onpu")]
-position = Vector2(-229, 302)
+position = Vector2(-914, 421)
 nextLevel = ExtResource("11_ctmdg")
