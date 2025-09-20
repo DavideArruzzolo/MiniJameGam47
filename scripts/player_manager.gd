@@ -1,10 +1,23 @@
 extends Node
 
+signal egg_changed(egg_name)
+signal player_switched(player_name, player_color)
+
 var players = []
 var current_player_index = -1
 
+var current_egg = "Default"
 
 
+
+func _ready():
+	# Imposta l'uovo iniziale e notifica la UI
+	set_current_egg(current_egg)
+
+
+func set_current_egg(egg_name):
+	current_egg = egg_name
+	emit_signal("egg_changed", current_egg)
 
 
 func _input(event):
@@ -34,6 +47,11 @@ func set_active_character(player_to_activate):
 	current_player_index = new_index
 	if is_instance_valid(players[current_player_index]):
 		players[current_player_index].activate()
+		var player = players[current_player_index]
+		var player_name = "Player"
+		if player.is_clone:
+			player_name = "Clone " + str(player.clone_generation)
+		emit_signal("player_switched", player_name, player.texture.modulate)
 
 
 func switch_character():
@@ -52,6 +70,11 @@ func switch_character():
 
 	if next_player_found:
 		players[current_player_index].activate()
+		var player = players[current_player_index]
+		var player_name = "Player"
+		if player.is_clone:
+			player_name = "Clone " + str(player.clone_generation)
+		emit_signal("player_switched", player_name, player.texture.modulate)
 	else:
 		current_player_index = -1
 

@@ -105,6 +105,6 @@ script = ExtResource("10_abcde")
 metadata/_custom_type_script = "uid://btvv0j28b5udu"
 
 [node name="LevelExit" parent="LevelManager" instance=ExtResource("11_fmhhv")]
-position = Vector2(-961, 381)
+position = Vector2(1189, 428)
 
 [connection signal="complete_level" from="LevelManager/LevelExit" to="LevelManager" method="complete_level"]

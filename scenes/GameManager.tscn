@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://bciyvj4gq2x2v"]
+[gd_scene load_steps=7 format=3 uid="uid://bciyvj4gq2x2v"]
 
 [ext_resource type="Script" uid="uid://dphepxbybjiy0" path="res://scripts/game_manager.gd" id="1_mgr"]
 [ext_resource type="PackedScene" uid="uid://d23fh0emtulbt" path="res://scenes/level/Level.tscn" id="2_lvl"]
 [ext_resource type="PackedScene" uid="uid://dsi33c0u5unw0" path="res://scenes/level/L1.tscn" id="3_l1"]
 [ext_resource type="PackedScene" uid="uid://hoh65td326gu" path="res://scenes/level/Level2.tscn" id="4_l2"]
 [ext_resource type="PackedScene" uid="uid://bnxwxn76m10g4" path="res://scenes/ui/StartMenu.tscn" id="5_menu"]
+[ext_resource type="PackedScene" uid="uid://buq3v5c367ppa" path="res://scenes/ui/EggDisplay.tscn" id="6_ui"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_mgr")
 levels = Array[PackedScene]([ExtResource("2_lvl"), ExtResource("3_l1"), ExtResource("4_l2")])
 main_menu_scene = ExtResource("5_menu")
+egg_display_scene = ExtResource("6_ui")

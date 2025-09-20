@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7hhkoqkbgny"]
+[gd_scene load_steps=3 format=3 uid="uid://b7hhkoqkbgny"]
 
 [ext_resource type="Script" uid="uid://btvv0j28b5udu" path="res://scripts/level/LevelManager.gd" id="1_6x5uh"]
+[ext_resource type="PackedScene" path="res://scenes/ui/EggDisplay.tscn" id="2_tt5ry"]
 
 [node name="Main" type="Node2D"]
+
+[node name="EggDisplay" parent="." instance=ExtResource("2_tt5ry")]
 
 [node name="LevelManager" type="Node" parent="."]
 script = ExtResource("1_6x5uh")

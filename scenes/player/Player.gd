@@ -21,6 +21,12 @@ func _ready():
 	if not is_clone:
 		$PlayerTrigger.monitoring = false
 		$PlayerTrigger.get_node("CollisionShape2D").disabled = true
+		# Set collision for original player
+		collision_layer = 0
+		set_collision_layer_value(2, true) # Original player is on Layer 2
+		collision_mask = 0
+		set_collision_mask_value(1, true) # Collide with world
+		set_collision_mask_value(3, true) # Collide with interactable
 
 
 func _exit_tree():
@@ -30,13 +36,15 @@ func _exit_tree():
 func activate():
 	is_active = true
 	$MovementComponent.is_active = true
-	# You can add visual feedback for the active player here, e.g., modulate = Color.WHITE
+	if not is_clone: # Only modulate if not a clone
+		texture.modulate = Color.WHITE # Visual feedback for active player
 
 
 func deactivate():
 	is_active = false
 	$MovementComponent.is_active = false
-	# You can add visual feedback for inactive players here, e.g., modulate = Color.GRAY
+	if not is_clone: # Only modulate if not a clone
+		texture.modulate = Color.GRAY # Visual feedback for inactive player
 
 
 func init_clone(pos: Vector2, generation: int) -> void:
