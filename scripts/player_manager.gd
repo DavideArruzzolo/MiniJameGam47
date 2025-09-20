@@ -5,37 +5,27 @@ signal player_switched(player_name, player_color)
 
 var players = []
 var current_player_index = -1
-var global_clone_generation_counter: int = 0
-
 var current_egg = "Default"
-
-
 
 func _ready():
 	set_current_egg(current_egg)
-
 
 func set_current_egg(egg_name):
 	current_egg = egg_name
 	emit_signal("egg_changed", current_egg)
 
-
-func get_next_clone_generation() -> int:
-	global_clone_generation_counter += 1
-	return global_clone_generation_counter
-
-
 func _input(event):
 	if event.is_action_pressed("switch_character"):
 		switch_character()
 
-
 func register_player(player):
+	if players.size() >= 4:
+		return
+
 	players.append(player)
 	if current_player_index == -1:
 		current_player_index = 0
 		players[current_player_index].activate()
-
 
 func set_active_character(player_to_activate):
 	var new_index = players.find(player_to_activate)
@@ -57,7 +47,6 @@ func set_active_character(player_to_activate):
 		if player.is_clone:
 			player_name = "Clone " + str(player.clone_generation)
 		emit_signal("player_switched", player_name, player.texture.modulate)
-
 
 func switch_character():
 	if players.size() < 2:
@@ -93,3 +82,18 @@ func unregister_player(player):
 			if players.size() > 0:
 				current_player_index = 0
 				players[0].activate()
+
+func reset_clones_and_counter():
+	var main_player = null
+	for player in players:
+		if not player.is_clone:
+			main_player = player
+			break
+	
+	players.clear()
+	if main_player:
+		players.append(main_player)
+		main_player.activate()
+		current_player_index = 0
+	else:
+		current_player_index = -1

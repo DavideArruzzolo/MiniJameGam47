@@ -3,22 +3,17 @@ class_name Player
 
 var player_scene: PackedScene = preload("res://scenes/player/Player.tscn")
 
-@onready var texture = $Texture
+signal interacted_event
 
+@onready var texture = $Texture
 @onready var audio_jump: AudioStreamPlayer2D = $AudioStreamPlayerJump
 @onready var audio_dash: AudioStreamPlayer2D = $AudioStreamPlayerDash
 @onready var audio_walk: AudioStreamPlayer2D = $AudioStreamPlayerWalk
 
 var clone_generation: int
 var can_clone: bool = true
-
 var is_active: bool = false
 var is_clone: bool = false
-
-signal interacted_event
-
-var clone_colors = [Color("ff7a00ff"), Color("ff5ed3ff"), Color("ffffffff")] 
-
 var clone_1_animations: SpriteFrames = preload("res://asset/resources/clone_1_animations.tres")
 var clone_2_animations: SpriteFrames = preload("res://asset/resources/clone_2_animations.tres")
 var clone_3_animations: SpriteFrames = preload("res://asset/resources/clone_3_animations.tres")
@@ -43,6 +38,7 @@ func _ready():
 
 
 func _exit_tree():
+	pass
 	PlayerManager.unregister_player(self)
 
 
@@ -63,9 +59,7 @@ func deactivate():
 func init_clone(pos: Vector2, generation: int) -> void:
 	is_clone = true
 	self.clone_generation = generation
-	print(generation)
 	name = "clone_" + str(generation)
-	pos.x -= 50
 	global_position = pos
 
 	match generation:
@@ -84,12 +78,13 @@ func init_clone(pos: Vector2, generation: int) -> void:
 
 	collision_layer = 0
 
-	if texture.sprite_frames.has_animation("idle"):
-		texture.play("idle")
-	else:
-		var anim_names = texture.sprite_frames.get_animation_names()
-		if anim_names.size() > 0:
-			texture.play(anim_names[0])
+	if texture.sprite_frames:
+		if texture.sprite_frames.has_animation("idle"):
+			texture.play("idle")
+		else:
+			var anim_names = texture.sprite_frames.get_animation_names()
+			if anim_names.size() > 0 and not anim_names[0].empty():
+				texture.play(anim_names[0])
 
 	var clone_layer = generation + 3
 	set_collision_layer_value(clone_layer, true)
@@ -102,7 +97,7 @@ func init_clone(pos: Vector2, generation: int) -> void:
 
 func _physics_process(_delta):
 	if is_active:
-		if Input.is_action_just_pressed("clone") && can_clone && clone_generation < 3:
+		if Input.is_action_just_pressed("clone") && can_clone:
 			clone()
 
 		if Input.is_action_just_pressed("interact"):
@@ -114,13 +109,12 @@ func _physics_process(_delta):
 
 
 func clone() -> void:
-	var next_generation = PlayerManager.get_next_clone_generation()
-
-	var instance = player_scene.instantiate()
-	get_parent().add_child(instance)
-	instance.init_clone(global_position, next_generation)
-
-	PlayerManager.set_active_character(instance)
+	if PlayerManager.players.size() < 4:
+		var new_clone_generation = PlayerManager.players.size()
+		var instance = player_scene.instantiate()
+		get_parent().add_child(instance)
+		instance.init_clone(global_position, new_clone_generation)
+		PlayerManager.set_active_character(instance)
 
 
 func update_animation() -> void:

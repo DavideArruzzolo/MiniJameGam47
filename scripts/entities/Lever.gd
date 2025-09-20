@@ -9,7 +9,7 @@ var egg_sprite_node: Sprite2D
 func _ready():
 	egg_sprite_node = Sprite2D.new()
 	add_child(egg_sprite_node)
-	egg_sprite_node.position = Vector2(0, -90) # This position might need adjustment in the editor
+	egg_sprite_node.position = Vector2(0, -90)
 	egg_sprite_node.scale = Vector2(3,3)
 	update_egg_sprite()
 
@@ -33,9 +33,9 @@ func onInteract():
 func onBodyEntered(body: Node2D) -> void:
 	if body is Player:
 		var can_interact = false
-		if allowed_clone_type == "": # No specific clone type required
+		if allowed_clone_type == "":
 			can_interact = true
-		elif body.name == allowed_clone_type: # Specific clone type required and matches
+		elif body.name == allowed_clone_type:
 			can_interact = true
 
 		if can_interact:
@@ -44,9 +44,9 @@ func onBodyEntered(body: Node2D) -> void:
 func onBodyExited(body: Node2D) -> void:
 	if body is Player:
 		var can_interact = false
-		if allowed_clone_type == "": # No specific clone type required
+		if allowed_clone_type == "":
 			can_interact = true
-		elif body.name == allowed_clone_type: # Specific clone type required and matches
+		elif body.name == allowed_clone_type:
 			can_interact = true
 
 		if can_interact:

@@ -12,7 +12,7 @@ var egg_sprite_node: Sprite2D
 func _ready():
 	egg_sprite_node = Sprite2D.new()
 	add_child(egg_sprite_node)
-	egg_sprite_node.position = Vector2(0, -90) # This position might need adjustment in the editor
+	egg_sprite_node.position = Vector2(0, -90)
 	egg_sprite_node.scale = Vector2(3,3)
 	update_egg_sprite()
 
@@ -42,7 +42,7 @@ func onBodyEntered(body):
 		if tile_map_node and not cells_to_erase.is_empty():
 			call_deferred("erase_cells_with_autotile", cells_to_erase)
 
-func onBodyExited(body):
+func onBodyExited(_body):
 	clonesInAreaCount -= 1
 	checkSetStatus()
 

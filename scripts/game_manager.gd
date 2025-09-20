@@ -30,6 +30,7 @@ func _input(event: InputEvent) -> void:
 
 
 func start_game():
+	PlayerManager.reset_clones_and_counter()
 	current_level_index = 0
 	if levels.size() > 0:
 		get_tree().call_deferred("change_scene_to_packed", levels[current_level_index])
@@ -38,6 +39,7 @@ func start_game():
 
 
 func go_to_next_level():
+	PlayerManager.reset_clones_and_counter()
 	current_level_index += 1
 	if current_level_index < levels.size():
 		get_tree().call_deferred("change_scene_to_packed", levels[current_level_index])
@@ -46,6 +48,7 @@ func go_to_next_level():
 
 
 func restart_current_level() -> void:
+	PlayerManager.reset_clones_and_counter()
 	if current_level_index != -1 and current_level_index < levels.size():
 		get_tree().call_deferred("change_scene_to_packed", levels[current_level_index])
 	else:
@@ -53,6 +56,7 @@ func restart_current_level() -> void:
 
 
 func go_to_main_menu():
+	PlayerManager.reset_clones_and_counter()
 	if main_menu_scene:
 		current_level_index = -1
 		get_tree().call_deferred("change_scene_to_packed", main_menu_scene)
