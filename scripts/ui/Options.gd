@@ -11,7 +11,6 @@ func _ready() -> void:
 
 
 func _on_h_slider_value_changed(slider_value: float):
-	print(slider_value)
 	BackgroundMusic.volume_db = remap(slider_value, 0.0, 100.0, MIN_VOLUME_DB, MAX_VOLUME_DB)
 	if slider_value == 0:
 		BackgroundMusic.stream_paused = true
