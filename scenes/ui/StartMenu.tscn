@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bnxwxn76m10g4"]
+[gd_scene load_steps=12 format=3 uid="uid://bnxwxn76m10g4"]
 
 [ext_resource type="Script" uid="uid://cwivqrspex8dv" path="res://scripts/ui/Menu.gd" id="1_8s1oy"]
 [ext_resource type="Texture2D" uid="uid://bb73q0jt0xlai" path="res://asset/graphics/ui/button/startButton.png" id="2_m4dj8"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c223sy52cx17e" path="res://asset/graphics/ui/madeBy/Cupcaaake.png" id="4_m4dj8"]
 [ext_resource type="Texture2D" uid="uid://6q51ya8l63o7" path="res://asset/graphics/ui/madeBy/R3G1S.png" id="6_dwflq"]
 [ext_resource type="Texture2D" uid="uid://46h0iowuqye0" path="res://asset/graphics/ui/madeBy/Senapi.png" id="7_5m6ga"]
-[ext_resource type="Texture2D" uid="uid://dnwg6twpv4at1" path="res://asset/graphics/ui/logo/logo.png" id="11_h2wd5"]
+[ext_resource type="Texture2D" uid="uid://ue3h4f4obuym" path="res://asset/graphics/ui/logo/logo.png" id="11_h2wd5"]
 [ext_resource type="AudioStream" uid="uid://d0cssa1owvoo2" path="res://asset/audio/sfx/ui/ui-sound.mp3" id="12_ui_sound"]
 
 [node name="Menu" type="Control"]
@@ -46,10 +46,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 10
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_ui_sound")
-volume_db = -12.0
-
 [node name="StartButton" type="TextureButton" parent="MenuButtons"]
 layout_mode = 2
 texture_normal = ExtResource("2_m4dj8")
@@ -62,19 +58,22 @@ texture_normal = ExtResource("3_h2wd5")
 layout_mode = 2
 texture_normal = ExtResource("4_dwflq")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_ui_sound")
+volume_db = -12.0
+
 [node name="Logo" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -320.0
-offset_top = 20.0
-offset_right = -20.0
+offset_left = -532.5
+offset_top = 7.0
+offset_right = 192.5
 offset_bottom = 320.0
-grow_horizontal = 2
-grow_vertical = 0
+grow_horizontal = 0
 rotation = 0.523599
-pivot_offset = Vector2(-75, 0)
+pivot_offset = Vector2(75, -90)
 texture = ExtResource("11_h2wd5")
 stretch_mode = 4
 

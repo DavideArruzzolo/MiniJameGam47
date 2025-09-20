@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c223sy52cx17e" path="res://asset/graphics/ui/madeBy/Cupcaaake.png" id="4_2uo21"]
 [ext_resource type="Texture2D" uid="uid://6q51ya8l63o7" path="res://asset/graphics/ui/madeBy/R3G1S.png" id="6_22j3j"]
 [ext_resource type="Texture2D" uid="uid://46h0iowuqye0" path="res://asset/graphics/ui/madeBy/Senapi.png" id="7_dsr17"]
-[ext_resource type="Texture2D" uid="uid://dnwg6twpv4at1" path="res://asset/graphics/ui/logo/logo.png" id="8_isy4h"]
+[ext_resource type="Texture2D" uid="uid://ue3h4f4obuym" path="res://asset/graphics/ui/logo/logo.png" id="8_isy4h"]
 [ext_resource type="AudioStream" uid="uid://d0cssa1owvoo2" path="res://asset/audio/sfx/ui/ui-sound.mp3" id="9_ui_sound"]
 
 [node name="Menu" type="Control"]
@@ -73,7 +73,7 @@ offset_bottom = 320.0
 grow_horizontal = 2
 grow_vertical = 0
 rotation = 0.523599
-pivot_offset = Vector2(-75, 0)
+pivot_offset = Vector2(75, -90)
 texture = ExtResource("8_isy4h")
 stretch_mode = 4
 
