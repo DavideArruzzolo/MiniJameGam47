@@ -87,7 +87,7 @@ func init_clone(pos: Vector2, generation: int) -> void:
 	# $PlayerTrigger.body_exited.connect(_on_player_exited)
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta):
 	if is_active:
 		if Input.is_action_just_pressed("clone") && can_clone && clone_generation < 3:
 			clone()

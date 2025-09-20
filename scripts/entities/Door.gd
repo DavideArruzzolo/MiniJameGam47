@@ -1,4 +1,4 @@
-extends Node2D
+extends Area2D
 class_name Door
 
 # Assign only Switchable - Godot does not allow exporting custom classes, but non-switchable won't work!
@@ -26,9 +26,11 @@ func checkOpen():
 
 	if shouldOpen:
 		$AnimatedSprite2D.frame = 1
-		$Hitbox.set_collision_layer_value(1, 0)
-		$Hitbox.set_collision_mask_value(1, 0)
+		if $Hitbox:
+			$Hitbox.set_collision_layer_value(1, 0)
+			$Hitbox.set_collision_mask_value(1, 0)
 	else:
 		$AnimatedSprite2D.frame = 0
-		$Hitbox.set_collision_layer_value(1, 1)
-		$Hitbox.set_collision_mask_value(1, 1)
+		if $Hitbox:
+			$Hitbox.set_collision_layer_value(1, 1)
+			$Hitbox.set_collision_mask_value(1, 1)

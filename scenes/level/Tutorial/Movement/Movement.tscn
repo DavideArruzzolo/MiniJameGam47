@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=4 uid="uid://ddln0e26irxxn"]
+[gd_scene load_steps=7 format=4 uid="uid://ddln0e26irxxn"]
 
 [ext_resource type="PackedScene" uid="uid://xirvjsv2xxhk" path="res://scenes/player/Player.tscn" id="2_hqmc0"]
 [ext_resource type="Texture2D" uid="uid://boid4dqyo1iwb" path="res://asset/graphics/tiles/industrial/Tiles - Beach (1).png" id="2_mfat0"]
+[ext_resource type="Script" uid="uid://btvv0j28b5udu" path="res://scripts/level/LevelManager.gd" id="3_b7srr"]
+[ext_resource type="PackedScene" uid="uid://dnlv2n6x2f6gq" path="res://scenes/entities/LevelExit.tscn" id="4_b7srr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b7srr"]
 texture = ExtResource("2_mfat0")
@@ -260,3 +262,12 @@ limit_bottom = 5180
 
 [node name="Player" parent="." instance=ExtResource("2_hqmc0")]
 position = Vector2(-564, 276)
+
+[node name="LevelManager" type="Node" parent="."]
+script = ExtResource("3_b7srr")
+metadata/_custom_type_script = "uid://btvv0j28b5udu"
+
+[node name="LevelExit" parent="LevelManager" instance=ExtResource("4_b7srr")]
+position = Vector2(527, 35)
+
+[connection signal="complete_level" from="LevelManager/LevelExit" to="LevelManager" method="complete_level"]
