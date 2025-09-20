@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://d23fh0emtulbt"]
+[gd_scene load_steps=18 format=4 uid="uid://d23fh0emtulbt"]
 
 [ext_resource type="Texture2D" uid="uid://6jrftd2ew74n" path="res://asset/graphics/tiles/level_1/itchbg2.png" id="1_8onpu"]
 [ext_resource type="Texture2D" uid="uid://q7hcrsstacxq" path="res://asset/graphics/tiles/level_1/itchtile3.png" id="1_f6d01"]
@@ -9,32 +9,34 @@
 [ext_resource type="PackedScene" uid="uid://d11oeja7nrdi" path="res://scenes/entities/lever.tscn" id="4_reyld"]
 [ext_resource type="PackedScene" uid="uid://h440sw47h6bo" path="res://scenes/entities/button.tscn" id="5_e4y3p"]
 [ext_resource type="PackedScene" uid="uid://cmfy0xxjm72q0" path="res://scenes/entities/door.tscn" id="6_4nqmc"]
+[ext_resource type="PackedScene" uid="uid://d3tnsm317nhhg" path="res://scenes/level/level_exit.tscn" id="10_8onpu"]
+[ext_resource type="PackedScene" uid="uid://bdgsj42uur58y" path="res://scenes/level/L1.tscn" id="11_ctmdg"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1gue"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ctmdg"]
 texture = ExtResource("1_f6d01")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0gguh"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nef5n"]
 texture = ExtResource("2_8onpu")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, -32, 32, 32, -32, 32)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8wbt5"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1gue"]
 texture = ExtResource("3_ctmdg")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, -32, 32, 32, -32, 32, -32, -32)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p0gqr"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0gguh"]
 texture = ExtResource("4_nef5n")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f6d01"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8wbt5"]
 texture = ExtResource("2_8onpu")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
@@ -43,21 +45,22 @@ texture_region_size = Vector2i(64, 64)
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 250
-sources/0 = SubResource("TileSetAtlasSource_v1gue")
-sources/1 = SubResource("TileSetAtlasSource_0gguh")
-sources/2 = SubResource("TileSetAtlasSource_8wbt5")
-sources/3 = SubResource("TileSetAtlasSource_p0gqr")
-sources/4 = SubResource("TileSetAtlasSource_f6d01")
+sources/0 = SubResource("TileSetAtlasSource_ctmdg")
+sources/1 = SubResource("TileSetAtlasSource_nef5n")
+sources/2 = SubResource("TileSetAtlasSource_v1gue")
+sources/3 = SubResource("TileSetAtlasSource_0gguh")
+sources/4 = SubResource("TileSetAtlasSource_8wbt5")
 
 [node name="Level" type="Node2D"]
 
 [node name="Itchbg2" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(3.4998627, -31.000057)
+position = Vector2(3.49986, -31.0001)
 scale = Vector2(0.53, 0.53)
 texture = ExtResource("1_8onpu")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-76, 40)
 scale = Vector2(0.53, 0.53)
 zoom = Vector2(0.5, 0.5)
 limit_left = -2400
@@ -72,7 +75,7 @@ tile_map_data = PackedByteArray("AADc/w4AAAAAAAAAAADd/w4AAAAAAAAAAADe/w4AAAAAAAA
 tile_set = SubResource("TileSet_ti4pp")
 
 [node name="Player" parent="." instance=ExtResource("2_cne4c")]
-position = Vector2(-1167.9999, 411)
+position = Vector2(-1168, 411)
 scale = Vector2(0.2, 0.2)
 
 [node name="Lever" parent="." instance=ExtResource("4_reyld")]
@@ -98,3 +101,7 @@ scale = Vector2(0.2, 0.2)
 position = Vector2(1249, 435)
 scale = Vector2(0.2, 0.2)
 SwitchesToOpen = [NodePath("../Button"), NodePath("../Lever")]
+
+[node name="LevelExit" parent="." instance=ExtResource("10_8onpu")]
+position = Vector2(-229, 302)
+nextLevel = ExtResource("11_ctmdg")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2hp841fynnog"
-path="res://.godot/imported/Nuovo progetto (3).png-355868a0053d8b9e343ab6a61d1076e3.ctex"
+uid="uid://d087eafmuexna"
+path="res://.godot/imported/itchtile2.png-e04e2829d9021d5cd065dcab69b8c18c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/graphics/Nuovo progetto (3).png"
-dest_files=["res://.godot/imported/Nuovo progetto (3).png-355868a0053d8b9e343ab6a61d1076e3.ctex"]
+source_file="res://asset/entities/itchtile2.png"
+dest_files=["res://.godot/imported/itchtile2.png-e04e2829d9021d5cd065dcab69b8c18c.ctex"]
 
 [params]
 

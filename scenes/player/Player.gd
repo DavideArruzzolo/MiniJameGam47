@@ -117,5 +117,3 @@ func update_animation() -> void:
 			texture.play("walk")
 		else:
 			texture.play("idle")
-
-

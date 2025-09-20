@@ -1,11 +1,17 @@
 extends Node
 class_name LevelManager
 
+@export var first_level: PackedScene
 var currentLevel = null
 
+func _ready() -> void:
+	LoadLevel(first_level)
 
-func ChangeScene(newLevel: PackedScene):
-	remove_child(currentLevel)
-	var instance = newLevel.instantiate
+func LoadLevel(newLevel: PackedScene):
+	var instance = newLevel.instantiate()
 	add_child(instance)
 	currentLevel = instance
+
+func ChangeLevel(newLevel: PackedScene):
+	remove_child(currentLevel)
+	LoadLevel(newLevel)
