@@ -30,6 +30,8 @@ func _ready():
 	$MovementComponent.dash_started.connect(_on_dash_started)
 	if not is_clone:
 		texture.sprite_frames = player_animations # Assign player animations
+		if texture.sprite_frames.has_animation("idle"): # Ensure a default animation is set
+			texture.play("idle")
 		$PlayerTrigger.monitoring = false
 		$PlayerTrigger.get_node("CollisionShape2D").disabled = true
 		# Set collision for original player
@@ -86,7 +88,14 @@ func init_clone(pos: Vector2, generation: int) -> void:
 	# 1. Pulisce i layer esistenti. Il clone non deve stare sul layer "player".
 	collision_layer = 0
 
-	update_animation() # Ensure animation is set after sprite_frames are assigned
+	# Ensure a default animation is set after sprite_frames are assigned
+	if texture.sprite_frames.has_animation("idle"):
+		texture.play("idle")
+	else:
+		# If no idle animation, try to play the first available animation
+		var anim_names = texture.sprite_frames.get_animation_names()
+		if anim_names.size() > 0:
+			texture.play(anim_names[0])
 
 	# 2. Assegna il clone al suo layer unico.
 	#    Assumiamo che i layer per i cloni inizino dal 4 ("clone1").
