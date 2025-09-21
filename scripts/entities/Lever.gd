@@ -25,7 +25,7 @@ func update_egg_sprite():
 		egg_sprite_node.visible = false
 
 func onInteract():
-	if Status: # Already activated, do nothing
+	if Status:
 		return
 
 	var current_player = PlayerManager.players[PlayerManager.current_player_index]

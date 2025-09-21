@@ -8,7 +8,7 @@ const MAX_VOLUME_DB = 0.0
 
 
 func _ready() -> void:
-	$MenuButtons/HSlider.value = 5
+	$MenuButtons/HSlider.value = 25
 	$MenuButtons/TextureButton.mouse_entered.connect(_on_button_mouse_entered)
 
 	var made_by_buttons = [
