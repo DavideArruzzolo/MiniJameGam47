@@ -58,7 +58,7 @@ func _physics_process(delta: float) -> void:
 
 	process_input()
 
-	if not character.is_on_floor():
+	if not character.is_on_floor() and current_state != State.DASH:
 		character.velocity.y += gravity * delta
 
 	match current_state:
