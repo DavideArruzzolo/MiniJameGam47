@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://l1rrfdffadhp"]
+[gd_scene load_steps=9 format=3 uid="uid://l1rrfdffadhp"]
 
+[ext_resource type="Texture2D" uid="uid://dhvx6lihg07k4" path="res://asset/graphics/background/old_lvl1_bg.png" id="1_26fka"]
 [ext_resource type="Script" uid="uid://btvv0j28b5udu" path="res://scripts/level/LevelManager.gd" id="1_jdmlx"]
 [ext_resource type="PackedScene" uid="uid://fw3q1vurolkw" path="res://scenes/entities/LevelExit.tscn" id="2_26fka"]
 [ext_resource type="PackedScene" uid="uid://xirvjsv2xxhk" path="res://scenes/player/Player.tscn" id="3_2ivk8"]
@@ -10,6 +11,11 @@
 
 [node name="Level_1" type="Node2D"]
 position = Vector2(8, -475)
+
+[node name="Industrial" type="Sprite2D" parent="."]
+position = Vector2(14.5, 13.5004)
+scale = Vector2(4.01094, 2.96042)
+texture = ExtResource("1_26fka")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1, 0)
@@ -25,10 +31,9 @@ position = Vector2(1117, 115)
 [node name="Player" parent="." instance=ExtResource("3_2ivk8")]
 position = Vector2(-720, 592)
 
-[node name="Door" parent="." node_paths=PackedStringArray("SwitchesToOpen") instance=ExtResource("4_nt0a3")]
+[node name="Door" parent="." instance=ExtResource("4_nt0a3")]
 position = Vector2(1104, 588)
 scale = Vector2(0.35, 0.35)
-SwitchesToOpen = [null, null, null]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(468, -395)
@@ -114,5 +119,12 @@ offset_bottom = 617.0
 scale = Vector2(2, 2)
 text = "1
 "
+
+[node name="PauseControl2" parent="." instance=ExtResource("7_ijwoi")]
+offset_left = -1503.0
+offset_top = -745.0
+offset_right = -1503.0
+offset_bottom = -745.0
+scale = Vector2(2, 2)
 
 [connection signal="complete_level" from="LevelManager/LevelExit" to="LevelManager" method="complete_level"]
