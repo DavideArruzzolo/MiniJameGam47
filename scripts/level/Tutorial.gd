@@ -8,7 +8,7 @@ func _ready():
 		var initial_player = PlayerManager.players[PlayerManager.current_player_index]
 		_setup_player_camera(initial_player)
 
-func _on_player_switched(player_name, player_color):
+func _on_player_switched(_player_name, _player_color):
 	var new_active_player = PlayerManager.players[PlayerManager.current_player_index]
 	_setup_player_camera(new_active_player)
 
