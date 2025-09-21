@@ -29,6 +29,9 @@ size = Vector2(405, 305)
 [node name="Lever" type="Node2D"]
 scale = Vector2(0.2, 0.2)
 script = ExtResource("1_pae4l")
+cells_to_erase = null
+tile_map_layer_index = null
+allowed_clone_type = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_aby53")

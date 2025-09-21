@@ -1,10 +1,11 @@
-[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://bhm31p63252bs"]
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://bhm31p63252bs"]
 
 [ext_resource type="Texture2D" uid="uid://bgyil3nec66lr" path="res://asset/graphics/clone_1/dash/dash.png" id="1_5vsg8"]
 [ext_resource type="Texture2D" uid="uid://cimu8xikio6xd" path="res://asset/graphics/clone_1/walk/walk_1.png" id="1_walk_1"]
 [ext_resource type="Texture2D" uid="uid://b57k6okel5pfu" path="res://asset/graphics/clone_1/walk/walk_2.png" id="1_walk_2"]
 [ext_resource type="Texture2D" uid="uid://bmrj415ksm4ij" path="res://asset/graphics/clone_1/walk/walk_3.png" id="1_walk_3"]
 [ext_resource type="Texture2D" uid="uid://b83bxfign6p6i" path="res://asset/graphics/clone_1/walk/walk_4.png" id="1_walk_4"]
+[ext_resource type="Texture2D" uid="uid://ndnhyvqvxxry" path="res://asset/graphics/clone_1/itchfallc.png" id="2_1ghsq"]
 [ext_resource type="Texture2D" uid="uid://8l6mwdcde4ww" path="res://asset/graphics/clone_1/idle/idle.png" id="2_bhh70"]
 [ext_resource type="Texture2D" uid="uid://46fv57hklcq8" path="res://asset/graphics/clone_1/jump/jump_2.png" id="3_1ghsq"]
 [ext_resource type="Texture2D" uid="uid://dkrxtrtco2nie" path="res://asset/graphics/clone_1/jump/jump_1.png" id="4_7klih"]
@@ -17,6 +18,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"dash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1ghsq")
+}],
+"loop": true,
+"name": &"fall",
 "speed": 5.0
 }, {
 "frames": [{

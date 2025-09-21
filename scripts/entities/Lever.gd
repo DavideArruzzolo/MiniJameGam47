@@ -15,6 +15,7 @@ func _ready():
 	egg_sprite_node.position = Vector2(0, -90)
 	egg_sprite_node.scale = Vector2(3,3)
 	update_egg_sprite()
+	self.StatusChangedEvent.connect(_on_status_changed)
 
 func update_egg_sprite():
 	if egg_sprite_texture:
@@ -24,6 +25,9 @@ func update_egg_sprite():
 		egg_sprite_node.visible = false
 
 func onInteract():
+	if Status: # Already activated, do nothing
+		return
+
 	var current_player = PlayerManager.players[PlayerManager.current_player_index]
 	var can_interact = false
 	if allowed_clone_type == "":
@@ -34,17 +38,14 @@ func onInteract():
 	if not can_interact:
 		return
 
-	if Status:
-		Status = false
-		$AnimatedSprite2D.play("default")
+	Status = true
+
+func _on_status_changed(_switchable, new_status):
+	if new_status == true:
 		$AudioStreamPlayer.play()
-	else:
-		Status = true
 		$AnimatedSprite2D.play("default", -1, true)
-		$AudioStreamPlayer.play()
-		
 		if tile_map_node and not cells_to_erase.is_empty():
-			call_deferred("erase_cells_with_autotile", cells_to_erase)
+			tile_map_node.set_cells_terrain_connect(tile_map_layer_index, cells_to_erase, 0, -1)
 
 func onBodyEntered(body: Node2D) -> void:
 	if body is Player:
@@ -53,6 +54,3 @@ func onBodyEntered(body: Node2D) -> void:
 func onBodyExited(body: Node2D) -> void:
 	if body is Player:
 		body.interacted_event.disconnect(onInteract)
-
-func erase_cells_with_autotile(cells: Array[Vector2i]) -> void:
-	tile_map_node.set_cells_terrain_connect(tile_map_layer_index, cells, 0, 1)
