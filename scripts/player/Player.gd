@@ -48,15 +48,13 @@ func _exit_tree():
 func activate():
 	is_active = true
 	$MovementComponent.is_active = true
-	if not is_clone:
-		texture.modulate = Color.WHITE
+	texture.modulate = Color.WHITE
 
 
 func deactivate():
 	is_active = false
 	$MovementComponent.is_active = false
-	if not is_clone:
-		texture.modulate = Color.GRAY
+	texture.modulate = Color.GRAY
 
 
 func init_clone(pos: Vector2, generation: int) -> void:
