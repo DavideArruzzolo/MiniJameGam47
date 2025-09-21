@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d27x73tukfwl4"
-path="res://.godot/imported/itchtileset2y.png-6e19022276c9c851081ba955b94b26c5.ctex"
+path="res://.godot/imported/sparkle.png-3cce0bd92d36ab624a43dad2c018a9a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/graphics/tileSets/itchtileset2y.png"
-dest_files=["res://.godot/imported/itchtileset2y.png-6e19022276c9c851081ba955b94b26c5.ctex"]
+source_file="res://asset/graphics/tileSets/sparkle.png"
+dest_files=["res://.godot/imported/sparkle.png-3cce0bd92d36ab624a43dad2c018a9a5.ctex"]
 
 [params]
 
