@@ -10,6 +10,9 @@ func _ready():
 		if switchable != null:
 			switchable.StatusChangedEvent.connect(onStatusChanged)
 			statuses[switchable] = switchable.Status
+			
+	if len(SwitchesToOpen) == 0:
+		open()
 
 
 func onStatusChanged(changingStatus: Switchable, status: bool):
@@ -23,12 +26,18 @@ func checkOpen():
 		if statuses[key] == false:
 			shouldOpen = false
 	if shouldOpen:
-		$AnimatedSprite2D.frame = 1
-		if $CollisionShape2D:
-			set_collision_layer_value(1, false)
-			set_collision_mask_value(1, false)
+		open()
 	else:
-		$AnimatedSprite2D.frame = 0
-		if $CollisionShape2D:
-			set_collision_layer_value(1, true)
-			set_collision_mask_value(1, false)
+		close()
+			
+func open():
+	$AnimatedSprite2D.frame = 1
+	if $CollisionShape2D:
+		set_collision_layer_value(1, false)
+		set_collision_mask_value(1, false)
+
+func close():
+	$AnimatedSprite2D.frame = 0
+	if $CollisionShape2D:
+		set_collision_layer_value(1, true)
+		set_collision_mask_value(1, false)
