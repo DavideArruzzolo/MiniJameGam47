@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d24jo716or4ck"
-path="res://.godot/imported/clone_1_fall.png-8d36c4d30329b84a22451dcf7737a56a.ctex"
+uid="uid://ghm4u5qoagbd"
+path="res://.godot/imported/slider.png-bea256a79e13ad368917e09c90ae58ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/graphics/clone_2/jump/clone_1_fall.png"
-dest_files=["res://.godot/imported/clone_1_fall.png-8d36c4d30329b84a22451dcf7737a56a.ctex"]
+source_file="res://asset/graphics/ui/button/slider.png"
+dest_files=["res://.godot/imported/slider.png-bea256a79e13ad368917e09c90ae58ce.ctex"]
 
 [params]
 
