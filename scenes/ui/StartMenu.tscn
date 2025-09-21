@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://bnxwxn76m10g4"]
+[gd_scene load_steps=13 format=3 uid="uid://bnxwxn76m10g4"]
 
 [ext_resource type="Script" uid="uid://cwivqrspex8dv" path="res://scripts/ui/Menu.gd" id="1_8s1oy"]
+[ext_resource type="Texture2D" uid="uid://cpkdyodo4dt4s" path="res://asset/graphics/ui/cover.png" id="2_dwflq"]
 [ext_resource type="Texture2D" uid="uid://bb73q0jt0xlai" path="res://asset/graphics/ui/button/startButton.png" id="2_m4dj8"]
 [ext_resource type="Texture2D" uid="uid://7tis2k56oekk" path="res://asset/graphics/ui/madeBy/broth3rcast.png" id="2_mn42h"]
 [ext_resource type="Texture2D" uid="uid://b1pmnsyq8gtje" path="res://asset/graphics/ui/madeBy/Cubey.png" id="3_3o66m"]
@@ -23,7 +24,17 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_8s1oy")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_dwflq")
+
 [node name="Background" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -37,10 +48,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 200.0
-offset_top = -137.5
-offset_right = 450.0
-offset_bottom = 137.5
+offset_left = 50.0
+offset_top = -347.5
+offset_right = 300.0002
+offset_bottom = 22.5
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -54,6 +65,10 @@ texture_normal = ExtResource("2_m4dj8")
 layout_mode = 2
 texture_normal = ExtResource("3_h2wd5")
 
+[node name="OptionsButton2" type="TextureButton" parent="MenuButtons"]
+layout_mode = 2
+texture_normal = ExtResource("3_h2wd5")
+
 [node name="ExitButton" type="TextureButton" parent="MenuButtons"]
 layout_mode = 2
 texture_normal = ExtResource("4_dwflq")
@@ -64,16 +79,14 @@ volume_db = -12.0
 
 [node name="Logo" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -532.5
-offset_top = 7.0
-offset_right = 192.5
-offset_bottom = 320.0
-grow_horizontal = 0
-rotation = 0.523599
-pivot_offset = Vector2(75, -90)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -157.0
+offset_right = 725.0
+offset_bottom = 156.0
+grow_vertical = 0
+scale = Vector2(0.569, 0.5)
 texture = ExtResource("11_h2wd5")
 stretch_mode = 4
 
@@ -161,73 +174,93 @@ offset_bottom = 40.0
 texture = ExtResource("7_5m6ga")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -123.27
-offset_top = -290.555
-offset_right = 304.731
-offset_bottom = -51.5547
+offset_left = -389.0
+offset_top = -720.0
+offset_right = 39.000977
+offset_bottom = -480.9997
 grow_horizontal = 2
 grow_vertical = 0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Keys:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "LEFT  = A or LEFT ARROW / LEFT STICK"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label4" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "RIGHT  = D or RIGHT ARROW / LEFT STICK"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "JUMP  = SPACE / Xbox A / Playstation X"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label5" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "DASH = SHIFT LEFT or RIGHT / Xbox B / Playstation O"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label6" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Reset = R / Xbox Y / Playstation triangle"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label7" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "CLONE = C / XBOX and Playstation UP ARROW"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label8" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "SWITCH EGG = TAB / XBOX and Playstation LEFT ARROW"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label9" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "INTERACT = X / XBOX and Playstation RIGHT ARROW"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="MenuButtons/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MenuButtons/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MenuButtons/OptionsButton2" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="MenuButtons/ExitButton" to="." method="_on_exit_button_pressed"]
