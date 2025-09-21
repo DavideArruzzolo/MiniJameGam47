@@ -1,7 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://bwho8cp6uu43i"]
+[gd_scene load_steps=14 format=3 uid="uid://bwho8cp6uu43i"]
 
 [ext_resource type="TileSet" uid="uid://dj443wtt2qlf8" path="res://asset/resources/tiles.tres" id="1_8in7i"]
-[ext_resource type="Script" uid="uid://pv0oa1uff376" path="res://scripts/level/Tutorial.gd" id="1_sp44e"]
+[ext_resource type="Script" path="res://scripts/level/Tutorial.gd" id="1_sp44e"]
 [ext_resource type="PackedScene" uid="uid://xirvjsv2xxhk" path="res://scenes/player/Player.tscn" id="1_u6ijr"]
 [ext_resource type="Script" uid="uid://btvv0j28b5udu" path="res://scripts/level/LevelManager.gd" id="2_8in7i"]
 [ext_resource type="Texture2D" uid="uid://4paemud5ldw5" path="res://asset/graphics/background/tutorial.png" id="2_nadmp"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bpi7litir1odf" path="res://asset/graphics/ui/eggDisplayed/clone_3.png" id="8_ce2oi"]
 [ext_resource type="Texture2D" uid="uid://fdnh12u2k4om" path="res://asset/graphics/ui/eggDisplayed/clone_1.png" id="10_bxuk6"]
 [ext_resource type="Texture2D" uid="uid://woac546npe28" path="res://asset/graphics/ui/eggDisplayed/clone_2.png" id="10_dns2n"]
+[ext_resource type="PackedScene" uid="uid://sh2pf1q32ou6" path="res://scenes/ui/MainPauseMenu.tscn" id="13_vawxq"]
 
 [node name="Tutorial" type="Node2D"]
 script = ExtResource("1_sp44e")
@@ -33,6 +34,13 @@ collision_mask = 261
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-9.99994, 4.99986)
 scale = Vector2(5, 5)
+
+[node name="PauseControl" parent="Player" instance=ExtResource("13_vawxq")]
+offset_left = -3020.0
+offset_top = -1435.0
+offset_right = -3020.0
+offset_bottom = -1435.0
+scale = Vector2(4, 4)
 
 [node name="LevelManager" type="Node" parent="."]
 script = ExtResource("2_8in7i")

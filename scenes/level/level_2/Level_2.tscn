@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cgvbym2tknmad"]
+[gd_scene load_steps=9 format=3 uid="uid://cgvbym2tknmad"]
 
 [ext_resource type="Texture2D" uid="uid://dhvx6lihg07k4" path="res://asset/graphics/background/old_lvl1_bg.png" id="1_hv1dc"]
 [ext_resource type="Script" uid="uid://btvv0j28b5udu" path="res://scripts/level/LevelManager.gd" id="2_tb0fl"]
@@ -7,12 +7,13 @@
 [ext_resource type="TileSet" uid="uid://dj443wtt2qlf8" path="res://asset/resources/tiles.tres" id="5_mb23c"]
 [ext_resource type="PackedScene" uid="uid://cmfy0xxjm72q0" path="res://scenes/entities/door.tscn" id="6_wbl0a"]
 [ext_resource type="PackedScene" uid="uid://h440sw47h6bo" path="res://scenes/entities/button.tscn" id="7_ern0y"]
+[ext_resource type="PackedScene" uid="uid://sh2pf1q32ou6" path="res://scenes/ui/MainPauseMenu.tscn" id="8_syby4"]
 
 [node name="Level_1" type="Node2D"]
 
 [node name="Industrial" type="Sprite2D" parent="."]
-position = Vector2(33.00003, 7.6293945e-05)
-scale = Vector2(3.8562498, 2.7833335)
+position = Vector2(33, 7.62939e-05)
+scale = Vector2(3.85625, 2.78333)
 texture = ExtResource("1_hv1dc")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -174,5 +175,12 @@ text = "8"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="PauseControl" parent="." instance=ExtResource("8_syby4")]
+offset_left = -1280.0
+offset_top = -720.0
+offset_right = -1280.0
+offset_bottom = -720.0
+scale = Vector2(2, 2)
 
 [connection signal="complete_level" from="LevelManager/LevelExit" to="LevelManager" method="complete_level"]
