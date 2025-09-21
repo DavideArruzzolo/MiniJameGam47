@@ -25,6 +25,10 @@ run/fullsize=false
 run/show_image=false
 run/bg_color=Color(0, 0, 0, 1)
 
+[audio]
+
+driver/mix_rate=19200
+
 [autoload]
 
 BackgroundMusic="*res://BackgroundMusic.tscn"

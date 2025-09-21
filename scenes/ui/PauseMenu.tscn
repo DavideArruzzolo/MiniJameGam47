@@ -187,6 +187,7 @@ texture = ExtResource("8_y5d2p")
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 tooltip_text = "Cupcaaake"
+uri = "https://discord.com/users/1406561312414240808"
 
 [node name="TextureRect" type="TextureRect" parent="MadeBy/ProfileHolder/human3"]
 layout_mode = 0

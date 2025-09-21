@@ -5,6 +5,6 @@
 
 [node name="BackgroundMusic" type="AudioStreamPlayer"]
 stream = ExtResource("2_syabp")
-volume_db = -26.02
+volume_db = -12.04
 mix_target = 1
 script = ExtResource("1_vixg8")
