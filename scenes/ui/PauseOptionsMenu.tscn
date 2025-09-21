@@ -97,8 +97,8 @@ layout_mode = 2
 [node name="human" type="LinkButton" parent="MadeBy/ProfileHolder"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-tooltip_text = "USER"
-uri = "https://www.google.com/"
+tooltip_text = "BROTH3RCAST"
+uri = "https://broth3rcast.itch.io/"
 
 [node name="TextureRect" type="TextureRect" parent="MadeBy/ProfileHolder/human"]
 layout_mode = 0
@@ -109,21 +109,20 @@ texture = ExtResource("5_3l0n8")
 [node name="human2" type="LinkButton" parent="MadeBy/ProfileHolder"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-tooltip_text = "USER"
-uri = "https://www.google.com/"
+tooltip_text = "Cubey"
+uri = "https://cuber1.itch.io/"
 
 [node name="TextureRect" type="TextureRect" parent="MadeBy/ProfileHolder/human2"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 97.0
+offset_bottom = 97.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_xkf0h")
 
 [node name="human3" type="LinkButton" parent="MadeBy/ProfileHolder"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-tooltip_text = "USER"
-uri = "https://www.google.com/"
+tooltip_text = "Cupcaaake"
 
 [node name="TextureRect" type="TextureRect" parent="MadeBy/ProfileHolder/human3"]
 layout_mode = 0
@@ -134,8 +133,7 @@ texture = ExtResource("7_i7sh2")
 [node name="human5" type="LinkButton" parent="MadeBy/ProfileHolder"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-tooltip_text = "USER"
-uri = "https://www.google.com/"
+tooltip_text = "R3G1S"
 
 [node name="TextureRect" type="TextureRect" parent="MadeBy/ProfileHolder/human5"]
 layout_mode = 0
@@ -146,8 +144,8 @@ texture = ExtResource("8_mtb7x")
 [node name="human6" type="LinkButton" parent="MadeBy/ProfileHolder"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-tooltip_text = "USER"
-uri = "https://www.google.com/"
+tooltip_text = "Senapi"
+uri = "https://inabluemoon.itch.io/"
 
 [node name="TextureRect" type="TextureRect" parent="MadeBy/ProfileHolder/human6"]
 layout_mode = 0

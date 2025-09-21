@@ -68,89 +68,6 @@ pivot_offset = Vector2(75, -90)
 texture = ExtResource("6_3wlsb")
 stretch_mode = 4
 
-[node name="MadeBy" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -291.0
-offset_top = -102.0
-offset_right = -25.0
-offset_bottom = -25.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="MadeByText" type="Label" parent="MadeBy"]
-layout_mode = 2
-text = "Made by:"
-horizontal_alignment = 1
-
-[node name="ProfileHolder" type="HBoxContainer" parent="MadeBy"]
-layout_mode = 2
-
-[node name="human" type="LinkButton" parent="MadeBy/ProfileHolder"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-tooltip_text = "USER"
-uri = "https://www.google.com/"
-
-[node name="TextureRect" type="TextureRect" parent="MadeBy/ProfileHolder/human"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("7_bjk0l")
-
-[node name="human2" type="LinkButton" parent="MadeBy/ProfileHolder"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-tooltip_text = "USER"
-uri = "https://www.google.com/"
-
-[node name="TextureRect" type="TextureRect" parent="MadeBy/ProfileHolder/human2"]
-layout_mode = 0
-offset_right = 100.0
-offset_bottom = 101.0
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("8_y5d2p")
-
-[node name="human3" type="LinkButton" parent="MadeBy/ProfileHolder"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-tooltip_text = "USER"
-uri = "https://www.google.com/"
-
-[node name="TextureRect" type="TextureRect" parent="MadeBy/ProfileHolder/human3"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("9_mq8pi")
-
-[node name="human5" type="LinkButton" parent="MadeBy/ProfileHolder"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-tooltip_text = "USER"
-uri = "https://www.google.com/"
-
-[node name="TextureRect" type="TextureRect" parent="MadeBy/ProfileHolder/human5"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("10_epfii")
-
-[node name="human6" type="LinkButton" parent="MadeBy/ProfileHolder"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-tooltip_text = "USER"
-uri = "https://www.google.com/"
-
-[node name="TextureRect" type="TextureRect" parent="MadeBy/ProfileHolder/human6"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("11_0bs3u")
-
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 7
@@ -218,6 +135,87 @@ layout_mode = 2
 text = "Reset = R"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MadeBy" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -291.0
+offset_top = -102.0
+offset_right = -25.0
+offset_bottom = -25.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="MadeByText" type="Label" parent="MadeBy"]
+layout_mode = 2
+text = "Made by:"
+horizontal_alignment = 1
+
+[node name="ProfileHolder" type="HBoxContainer" parent="MadeBy"]
+layout_mode = 2
+
+[node name="human" type="LinkButton" parent="MadeBy/ProfileHolder"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+tooltip_text = "BROTH3RCAST"
+uri = "https://broth3rcast.itch.io/"
+
+[node name="TextureRect" type="TextureRect" parent="MadeBy/ProfileHolder/human"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("7_bjk0l")
+
+[node name="human2" type="LinkButton" parent="MadeBy/ProfileHolder"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+tooltip_text = "Cubey"
+uri = "https://cuber1.itch.io/"
+
+[node name="TextureRect" type="TextureRect" parent="MadeBy/ProfileHolder/human2"]
+layout_mode = 0
+offset_right = 97.0
+offset_bottom = 97.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_y5d2p")
+
+[node name="human3" type="LinkButton" parent="MadeBy/ProfileHolder"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+tooltip_text = "Cupcaaake"
+
+[node name="TextureRect" type="TextureRect" parent="MadeBy/ProfileHolder/human3"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("9_mq8pi")
+
+[node name="human5" type="LinkButton" parent="MadeBy/ProfileHolder"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+tooltip_text = "R3G1S"
+
+[node name="TextureRect" type="TextureRect" parent="MadeBy/ProfileHolder/human5"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("10_epfii")
+
+[node name="human6" type="LinkButton" parent="MadeBy/ProfileHolder"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+tooltip_text = "Senapi"
+uri = "https://inabluemoon.itch.io/"
+
+[node name="TextureRect" type="TextureRect" parent="MadeBy/ProfileHolder/human6"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("11_0bs3u")
 
 [connection signal="pressed" from="MenuButtons/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="MenuButtons/OptionsButton" to="." method="_on_options_button_pressed"]
