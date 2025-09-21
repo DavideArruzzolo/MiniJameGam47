@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://woac546npe28"
-path="res://.godot/imported/clone_2.png-21cdd6da711e4f00492360bb21f1e52b.ctex"
+uid="uid://d1wh4k2wbn23l"
+path="res://.godot/imported/itchbg9.png-bd787b3ba912e4bafdd87852a1df40a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/graphics/ui/eggDisplayed/clone_2.png"
-dest_files=["res://.godot/imported/clone_2.png-21cdd6da711e4f00492360bb21f1e52b.ctex"]
+source_file="res://asset/graphics/background/itchbg9.png"
+dest_files=["res://.godot/imported/itchbg9.png-bd787b3ba912e4bafdd87852a1df40a9.ctex"]
 
 [params]
 

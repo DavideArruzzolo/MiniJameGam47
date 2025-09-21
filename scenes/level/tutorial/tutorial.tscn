@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://bwho8cp6uu43i"]
 
 [ext_resource type="TileSet" uid="uid://dj443wtt2qlf8" path="res://asset/resources/tiles.tres" id="1_8in7i"]
-[ext_resource type="Script" path="res://scripts/level/Tutorial.gd" id="1_sp44e"]
+[ext_resource type="Script" uid="uid://pv0oa1uff376" path="res://scripts/level/Tutorial.gd" id="1_sp44e"]
 [ext_resource type="PackedScene" uid="uid://xirvjsv2xxhk" path="res://scenes/player/Player.tscn" id="1_u6ijr"]
 [ext_resource type="Script" uid="uid://btvv0j28b5udu" path="res://scripts/level/LevelManager.gd" id="2_8in7i"]
 [ext_resource type="Texture2D" uid="uid://4paemud5ldw5" path="res://asset/graphics/background/tutorial.png" id="2_nadmp"]
@@ -70,13 +70,13 @@ vertical_alignment = 1
 
 [node name="Label5" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "LEFT  = A or LEFT ARROW / Joystick LEFT STICK"
+text = "LEFT  = A or LEFT ARROW"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label4" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "RIGHT  = D or RIGHT ARROW / Joystick LEFT STICK"
+text = "RIGHT  = D or RIGHT ARROW"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -101,7 +101,7 @@ vertical_alignment = 1
 
 [node name="Label6" type="Label" parent="VBoxContainer3"]
 layout_mode = 2
-text = "DASH = SHIFT LEFT or RIGHT / Xbox B / Playstation O"
+text = "DASH = SHIFT LEFT"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -126,7 +126,7 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="VBoxContainer4"]
 layout_mode = 2
-text = "JUMP  = SPACE / Xbox A / Playstation X"
+text = "JUMP  = SPACE or Z"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -176,7 +176,7 @@ vertical_alignment = 1
 
 [node name="Label9" type="Label" parent="VBoxContainer6"]
 layout_mode = 2
-text = "INTERACT = X / XBOX and Playstation RIGHT ARROW"
+text = "INTERACT = X"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -201,13 +201,13 @@ vertical_alignment = 1
 
 [node name="Label9" type="Label" parent="VBoxContainer7"]
 layout_mode = 2
-text = "CLONE = C / XBOX and Playstation UP ARROW"
+text = "CLONE = C"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label8" type="Label" parent="VBoxContainer7"]
 layout_mode = 2
-text = "SWITCH EGG = TAB / XBOX and Playstation LEFT ARROW"
+text = "SWITCH EGG = TAB"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -355,7 +355,7 @@ vertical_alignment = 1
 
 [node name="Label7" type="Label" parent="VBoxContainer2"]
 layout_mode = 2
-text = "Reset = R / Xbox Y / Playstation triangle"
+text = "Reset = R"
 horizontal_alignment = 1
 vertical_alignment = 1
 
