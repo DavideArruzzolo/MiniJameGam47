@@ -1,4 +1,4 @@
-extends Area2D
+extends StaticBody2D
 class_name Door
 
 @export var SwitchesToOpen: Array[Node2D] = []
@@ -22,14 +22,13 @@ func checkOpen():
 	for key in statuses.keys():
 		if statuses[key] == false:
 			shouldOpen = false
-
 	if shouldOpen:
 		$AnimatedSprite2D.frame = 1
 		if $CollisionShape2D:
-			set_collision_layer_value(1, 0)
-			set_collision_mask_value(1, 0)
+			set_collision_layer_value(1, false)
+			set_collision_mask_value(1, false)
 	else:
 		$AnimatedSprite2D.frame = 0
 		if $CollisionShape2D:
-			set_collision_layer_value(1, 1)
-			set_collision_mask_value(1, 1)
+			set_collision_layer_value(1, true)
+			set_collision_mask_value(1, false)

@@ -24,7 +24,7 @@ metadata/_custom_type_script = "uid://btvv0j28b5udu"
 position = Vector2(1092, -187)
 
 [node name="Player" parent="." instance=ExtResource("4_uupaw")]
-position = Vector2(-1006, 265)
+position = Vector2(907.9999, 210)
 
 [node name="Door" parent="." node_paths=PackedStringArray("SwitchesToOpen") instance=ExtResource("6_afbqk")]
 position = Vector2(1080, 284)
