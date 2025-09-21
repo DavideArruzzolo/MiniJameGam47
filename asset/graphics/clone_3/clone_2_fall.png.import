@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dye8euvtskwgt"
-path="res://.godot/imported/withe.png-ae1f3da5f04bef21c9e5c7f900040fc3.ctex"
+uid="uid://cmvuawqktsrhq"
+path="res://.godot/imported/clone_2_fall.png-0d0daad4f3eb24f13ef17a8e7af848f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/graphics/entity/transparentWall/withe.png"
-dest_files=["res://.godot/imported/withe.png-ae1f3da5f04bef21c9e5c7f900040fc3.ctex"]
+source_file="res://asset/graphics/clone_3/clone_2_fall.png"
+dest_files=["res://.godot/imported/clone_2_fall.png-0d0daad4f3eb24f13ef17a8e7af848f1.ctex"]
 
 [params]
 

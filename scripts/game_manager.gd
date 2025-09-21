@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 @export var levels: Array[PackedScene]
 @export var main_menu_scene: PackedScene
@@ -25,9 +25,9 @@ func _ready():
 
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed and event.keycode == KEY_R:
-		restart_current_level()
-
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_R:
+			restart_current_level()
 
 func start_game():
 	PlayerManager.reset_clones_and_counter()
@@ -53,7 +53,6 @@ func restart_current_level() -> void:
 		get_tree().call_deferred("change_scene_to_packed", levels[current_level_index])
 	else:
 		get_tree().call_deferred("reload_current_scene")
-
 
 func go_to_main_menu():
 	PlayerManager.reset_clones_and_counter()

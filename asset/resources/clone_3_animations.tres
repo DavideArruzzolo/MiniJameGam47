@@ -1,5 +1,6 @@
-[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://rndq0ng7gc07"]
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://rndq0ng7gc07"]
 
+[ext_resource type="Texture2D" uid="uid://cmvuawqktsrhq" path="res://asset/graphics/clone_3/clone_2_fall.png" id="1_6bm6u"]
 [ext_resource type="Texture2D" uid="uid://bka2tb1r2s7cn" path="res://asset/graphics/clone_3/idle/idle.png" id="1_qe0ul"]
 [ext_resource type="Texture2D" uid="uid://bouwk3ida6yiy" path="res://asset/graphics/clone_3/walk/walk_1.png" id="1_walk_1"]
 [ext_resource type="Texture2D" uid="uid://bfwqugc4q21vm" path="res://asset/graphics/clone_3/walk/walk_2.png" id="1_walk_2"]
@@ -11,6 +12,14 @@ animations = [{
 "frames": [],
 "loop": true,
 "name": &"dash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6bm6u")
+}],
+"loop": true,
+"name": &"fall",
 "speed": 5.0
 }, {
 "frames": [{

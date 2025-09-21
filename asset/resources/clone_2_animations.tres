@@ -1,6 +1,7 @@
-[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://c2c56vvffv41v"]
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://c2c56vvffv41v"]
 
 [ext_resource type="Texture2D" uid="uid://bwoffqdj0j1" path="res://asset/graphics/clone_2/idle/idle.png" id="1_4dr87"]
+[ext_resource type="Texture2D" uid="uid://d24jo716or4ck" path="res://asset/graphics/clone_2/jump/clone_1_fall.png" id="1_nqtme"]
 [ext_resource type="Texture2D" uid="uid://dfq2dmpwspdle" path="res://asset/graphics/clone_2/walk/walk_1.png" id="1_walk_1"]
 [ext_resource type="Texture2D" uid="uid://de5qypy8hy3k6" path="res://asset/graphics/clone_2/walk/walk_2.png" id="1_walk_2"]
 [ext_resource type="Texture2D" uid="uid://dwuncauw4j41o" path="res://asset/graphics/clone_2/walk/walk_3.png" id="1_walk_3"]
@@ -17,6 +18,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("1_nqtme")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("1_4dr87")
 }],
 "loop": true,
@@ -27,7 +36,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("2_nqtme")
 }, {
-"duration": 1.0,
+"duration": 999.0,
 "texture": ExtResource("3_lsiv0")
 }],
 "loop": true,

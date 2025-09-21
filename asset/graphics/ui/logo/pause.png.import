@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dye8euvtskwgt"
-path="res://.godot/imported/withe.png-ae1f3da5f04bef21c9e5c7f900040fc3.ctex"
+uid="uid://dd0n6g2q5d3gr"
+path="res://.godot/imported/pause.png-0fe9b0e52968bd6b23c78860fa3fc40c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/graphics/entity/transparentWall/withe.png"
-dest_files=["res://.godot/imported/withe.png-ae1f3da5f04bef21c9e5c7f900040fc3.ctex"]
+source_file="res://asset/graphics/ui/logo/pause.png"
+dest_files=["res://.godot/imported/pause.png-0fe9b0e52968bd6b23c78860fa3fc40c.ctex"]
 
 [params]
 
