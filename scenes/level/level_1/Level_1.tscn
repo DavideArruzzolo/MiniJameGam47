@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d01jtm183y5ld"]
+[gd_scene load_steps=11 format=3 uid="uid://d01jtm183y5ld"]
 
 [ext_resource type="Script" uid="uid://btvv0j28b5udu" path="res://scripts/level/LevelManager.gd" id="1_h4gk0"]
 [ext_resource type="PackedScene" uid="uid://fw3q1vurolkw" path="res://scenes/entities/LevelExit.tscn" id="2_i8xgn"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://fdnh12u2k4om" path="res://asset/graphics/ui/eggDisplayed/clone_1.png" id="7_g8gcf"]
 [ext_resource type="TileSet" uid="uid://dj443wtt2qlf8" path="res://asset/resources/Level_1.tres" id="7_k7784"]
 [ext_resource type="PackedScene" uid="uid://h440sw47h6bo" path="res://scenes/entities/button.tscn" id="7_sbkt5"]
+[ext_resource type="PackedScene" uid="uid://sh2pf1q32ou6" path="res://scenes/ui/MainPauseMenu.tscn" id="10_gxjc0"]
 
 [node name="Level_1" type="Node2D"]
 
@@ -28,7 +29,7 @@ layer_0/tile_data = PackedInt32Array(1507287, 0, 8, 1507288, 655360, 0, 1507289,
 zoom = Vector2(0.5, 0.5)
 
 [node name="Lever" parent="." instance=ExtResource("5_tujrl")]
-position = Vector2(-925.99994, -613.99994)
+position = Vector2(-926, -614)
 allowed_clone_type = "clone_3"
 egg_sprite_texture = ExtResource("5_rt1lu")
 
@@ -44,20 +45,27 @@ scale = Vector2(0.2, 0.2)
 SwitchesToOpen = [NodePath("../Button"), NodePath("../Lever"), NodePath("../Lever2"), NodePath("../Lever3")]
 
 [node name="Button" parent="." node_paths=PackedStringArray("tile_map_node") instance=ExtResource("7_sbkt5")]
-position = Vector2(579.00006, 377)
+position = Vector2(579, 377)
 scale = Vector2(0.2, 0.2)
 tile_map_node = NodePath("../TileMap")
 allowed_clone_type = "clone_1"
 egg_sprite_texture = ExtResource("7_g8gcf")
 
 [node name="Button2" parent="." node_paths=PackedStringArray("tile_map_node") instance=ExtResource("7_sbkt5")]
-position = Vector2(-936.0002, 543)
+position = Vector2(-936, 543)
 scale = Vector2(0.2, 0.2)
 tile_map_node = NodePath("../TileMap")
 cells_to_erase = Array[Vector2i]([Vector2i(6, -9), Vector2i(6, -8), Vector2i(6, -7), Vector2i(6, -6), Vector2i(6, -5), Vector2i(6, 20)])
 allowed_clone_type = "Player"
 
 [node name="Player" parent="." instance=ExtResource("3_i8xgn")]
-position = Vector2(-808.9999, -629.9999)
+position = Vector2(-809, -630)
+
+[node name="PauseControl" parent="." instance=ExtResource("10_gxjc0")]
+offset_left = -1280.0
+offset_top = -720.0
+offset_right = -1280.0
+offset_bottom = -720.0
+scale = Vector2(2, 2)
 
 [connection signal="complete_level" from="LevelManager/LevelExit" to="LevelManager" method="complete_level"]

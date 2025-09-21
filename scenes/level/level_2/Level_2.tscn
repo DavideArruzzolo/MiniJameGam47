@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgvbym2tknmad"]
+[gd_scene load_steps=8 format=3 uid="uid://cgvbym2tknmad"]
 
 [ext_resource type="Script" uid="uid://btvv0j28b5udu" path="res://scripts/level/LevelManager.gd" id="2_tb0fl"]
 [ext_resource type="PackedScene" uid="uid://fw3q1vurolkw" path="res://scenes/entities/LevelExit.tscn" id="3_uruln"]
@@ -6,6 +6,7 @@
 [ext_resource type="TileSet" uid="uid://dj443wtt2qlf8" path="res://asset/resources/Level_1.tres" id="5_mb23c"]
 [ext_resource type="PackedScene" uid="uid://cmfy0xxjm72q0" path="res://scenes/entities/door.tscn" id="6_wbl0a"]
 [ext_resource type="PackedScene" uid="uid://h440sw47h6bo" path="res://scenes/entities/button.tscn" id="7_ern0y"]
+[ext_resource type="PackedScene" uid="uid://sh2pf1q32ou6" path="res://scenes/ui/MainPauseMenu.tscn" id="7_hv1dc"]
 
 [node name="Level_1" type="Node2D"]
 
@@ -22,7 +23,7 @@ position = Vector2(-977, 241)
 [node name="Door" parent="." node_paths=PackedStringArray("SwitchesToOpen") instance=ExtResource("6_wbl0a")]
 position = Vector2(-275, 633)
 scale = Vector2(0.2, 0.2)
-SwitchesToOpen = [NodePath(""), NodePath(""), NodePath(""), NodePath("")]
+SwitchesToOpen = [null, null, null, null]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(238, -384)
@@ -201,5 +202,12 @@ scale = Vector2(0.2, 0.2)
 [node name="Button8" parent="." instance=ExtResource("7_ern0y")]
 position = Vector2(-708, 376)
 scale = Vector2(0.2, 0.2)
+
+[node name="PauseControl" parent="." instance=ExtResource("7_hv1dc")]
+offset_left = -1244.0
+offset_top = -715.0
+offset_right = -1244.0
+offset_bottom = -715.0
+scale = Vector2(2, 2)
 
 [connection signal="complete_level" from="LevelManager/LevelExit" to="LevelManager" method="complete_level"]
