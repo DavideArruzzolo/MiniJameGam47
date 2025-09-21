@@ -105,6 +105,7 @@ reset={
 2d_physics/layer_6="clone3"
 2d_physics/layer_7="clone4"
 2d_physics/layer_8="clone5"
+2d_physics/layer_9="world_player"
 
 [rendering]
 

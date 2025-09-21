@@ -45,19 +45,15 @@ SwitchesToOpen = [NodePath("../Button"), NodePath("../Lever"), NodePath("../Leve
 
 [node name="Button" parent="." node_paths=PackedStringArray("tile_map_node") instance=ExtResource("7_sbkt5")]
 position = Vector2(579.00006, 377)
-scale = Vector2(0.2, 0.2)
 tile_map_node = NodePath("../TileMap")
 allowed_clone_type = "clone_1"
 egg_sprite_texture = ExtResource("7_g8gcf")
 
 [node name="Button2" parent="." node_paths=PackedStringArray("tile_map_node") instance=ExtResource("7_sbkt5")]
 position = Vector2(-936.0002, 543)
-scale = Vector2(0.2, 0.2)
 tile_map_node = NodePath("../TileMap")
 cells_to_erase = Array[Vector2i]([Vector2i(6, -9), Vector2i(6, -8), Vector2i(6, -7), Vector2i(6, -6), Vector2i(6, -5), Vector2i(6, 20)])
 allowed_clone_type = "Player"
 
 [node name="Player" parent="." instance=ExtResource("3_i8xgn")]
 position = Vector2(-808.9999, -629.9999)
-
-[connection signal="complete_level" from="LevelManager/LevelExit" to="LevelManager" method="complete_level"]

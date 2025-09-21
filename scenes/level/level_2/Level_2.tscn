@@ -408,6 +408,3 @@ SwitchesToOpen = [NodePath("../Lever"), NodePath("../Lever2"), NodePath("../Leve
 
 [node name="Button" parent="." instance=ExtResource("7_ern0y")]
 position = Vector2(579, 377)
-scale = Vector2(0.2, 0.2)
-
-[connection signal="complete_level" from="LevelManager/LevelExit" to="LevelManager" method="complete_level"]
