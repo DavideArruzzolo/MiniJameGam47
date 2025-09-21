@@ -138,8 +138,10 @@ func update_animation() -> void:
 		texture.flip_h = false
 
 	if not is_on_floor():
-		if texture.sprite_frames.has_animation("jump"):
+		if texture.sprite_frames.has_animation("jump") and velocity.y < 0:
 			texture.play("jump")
+		elif texture.sprite_frames.has_animation("fall"):
+			texture.play("fall")
 		elif texture.sprite_frames.has_animation("idle"):
 			texture.play("idle")
 	else:

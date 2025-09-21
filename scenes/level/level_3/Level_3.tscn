@@ -29,7 +29,6 @@ position = Vector2(-934, 245)
 
 [node name="Door" parent="." node_paths=PackedStringArray("SwitchesToOpen") instance=ExtResource("6_afbqk")]
 position = Vector2(1080, 284)
-scale = Vector2(0.2, 0.2)
 SwitchesToOpen = [NodePath("../Button2"), NodePath("../Button3"), NodePath("../Button4")]
 
 [node name="Button" parent="." instance=ExtResource("7_hxgp0")]
@@ -50,17 +49,14 @@ texture = ExtResource("8_1riuw")
 
 [node name="Button2" parent="." instance=ExtResource("7_hxgp0")]
 position = Vector2(714, 120)
-scale = Vector2(0.2, 0.2)
 
 [node name="Button3" parent="." instance=ExtResource("7_hxgp0")]
 position = Vector2(-968, 25)
-scale = Vector2(0.2, 0.2)
 cells_to_erase = Array[Vector2i]([Vector2i(0, 0)])
 allowed_clone_type = "0"
 
 [node name="Button4" parent="." instance=ExtResource("7_hxgp0")]
 position = Vector2(-306, 24)
-scale = Vector2(0.2, 0.2)
 allowed_clone_type = "0"
 
 [node name="Clone2" type="Sprite2D" parent="."]
