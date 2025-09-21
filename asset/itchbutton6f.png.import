@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://woac546npe28"
-path="res://.godot/imported/clone_2.png-21cdd6da711e4f00492360bb21f1e52b.ctex"
+uid="uid://dnx5c83nftgw0"
+path="res://.godot/imported/itchbutton6f.png-39e4d1b028d8ff619dc87ae8c48c7dac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/graphics/ui/eggDisplayed/clone_2.png"
-dest_files=["res://.godot/imported/clone_2.png-21cdd6da711e4f00492360bb21f1e52b.ctex"]
+source_file="res://asset/itchbutton6f.png"
+dest_files=["res://.godot/imported/itchbutton6f.png-39e4d1b028d8ff619dc87ae8c48c7dac.ctex"]
 
 [params]
 

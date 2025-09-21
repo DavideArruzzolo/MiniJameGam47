@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://xirvjsv2xxhk" path="res://scenes/player/Player.tscn" id="3_1y1hc"]
 [ext_resource type="PackedScene" uid="uid://cmfy0xxjm72q0" path="res://scenes/entities/door.tscn" id="4_qtdp3"]
 [ext_resource type="PackedScene" uid="uid://h440sw47h6bo" path="res://scenes/entities/button.tscn" id="5_0h0ay"]
-[ext_resource type="TileSet" uid="uid://dj443wtt2qlf8" path="res://asset/resources/Level_1.tres" id="6_e5ofr"]
+[ext_resource type="TileSet" uid="uid://dj443wtt2qlf8" path="res://asset/resources/tiles.tres" id="6_e5ofr"]
 [ext_resource type="PackedScene" uid="uid://sh2pf1q32ou6" path="res://scenes/ui/MainPauseMenu.tscn" id="9_585w3"]
 
 [node name="Level_1" type="Node2D"]
