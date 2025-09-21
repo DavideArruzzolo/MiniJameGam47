@@ -38,7 +38,14 @@ func checkSetStatus():
 func onBodyEntered(body):
 	clonesInAreaCount += 1
 	checkSetStatus()
-	if(body.name == allowed_clone_type):
+
+	var can_erase = false
+	if allowed_clone_type == "":
+		can_erase = true
+	elif body.name == allowed_clone_type:
+		can_erase = true
+		
+	if can_erase:
 		if tile_map_node and not cells_to_erase.is_empty():
 			call_deferred("erase_cells_with_autotile", cells_to_erase)
 
@@ -47,5 +54,4 @@ func onBodyExited(_body):
 	checkSetStatus()
 
 func erase_cells_with_autotile(cells: Array[Vector2i]) -> void:
-	for cell in cells:
-		tile_map_node.set_cells_terrain_connect(0, cells, 0, 1)
+	tile_map_node.set_cells_terrain_connect(tile_map_layer_index, cells, 0, 1)

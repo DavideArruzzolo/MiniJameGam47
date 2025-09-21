@@ -35,6 +35,9 @@ func _ready():
 		collision_mask = 0
 		set_collision_mask_value(1, true)
 		set_collision_mask_value(3, true)
+		set_collision_mask_value(10, true)
+		set_collision_mask_value(11, true)
+		set_collision_mask_value(12, true)
 
 
 func _exit_tree():
@@ -92,6 +95,14 @@ func init_clone(pos: Vector2, generation: int) -> void:
 	collision_mask = 0
 	set_collision_mask_value(1, true) 
 	set_collision_mask_value(3, true) 
+	set_collision_mask_value(9, true) 
+
+	if generation != 1:
+		set_collision_mask_value(10, true)
+	if generation != 2:
+		set_collision_mask_value(11, true)
+	if generation != 3:
+		set_collision_mask_value(12, true)
 
 
 
@@ -146,6 +157,12 @@ func update_animation() -> void:
 				texture.play("idle")
 			if audio_walk.playing:
 				audio_walk.stop()
+
+func get_player_type() -> String:
+	if is_clone:
+		return "clone_" + str(clone_generation)
+	else:
+		return "Player"
 
 func _on_dash_started():
 	audio_dash.play()
