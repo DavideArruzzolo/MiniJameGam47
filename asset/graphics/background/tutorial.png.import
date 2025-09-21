@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d24jo716or4ck"
-path="res://.godot/imported/clone_1_fall.png-8d36c4d30329b84a22451dcf7737a56a.ctex"
+uid="uid://4paemud5ldw5"
+path="res://.godot/imported/tutorial.png-c53d15751b9bbacbe3b734cc12989263.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/graphics/clone_2/jump/clone_1_fall.png"
-dest_files=["res://.godot/imported/clone_1_fall.png-8d36c4d30329b84a22451dcf7737a56a.ctex"]
+source_file="res://asset/graphics/background/tutorial.png"
+dest_files=["res://.godot/imported/tutorial.png-c53d15751b9bbacbe3b734cc12989263.ctex"]
 
 [params]
 
