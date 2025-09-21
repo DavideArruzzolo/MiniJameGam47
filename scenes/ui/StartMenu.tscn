@@ -65,10 +65,6 @@ texture_normal = ExtResource("2_m4dj8")
 layout_mode = 2
 texture_normal = ExtResource("3_h2wd5")
 
-[node name="OptionsButton2" type="TextureButton" parent="MenuButtons"]
-layout_mode = 2
-texture_normal = ExtResource("3_h2wd5")
-
 [node name="ExitButton" type="TextureButton" parent="MenuButtons"]
 layout_mode = 2
 texture_normal = ExtResource("4_dwflq")
@@ -262,5 +258,4 @@ vertical_alignment = 1
 
 [connection signal="pressed" from="MenuButtons/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MenuButtons/OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="MenuButtons/OptionsButton2" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="MenuButtons/ExitButton" to="." method="_on_exit_button_pressed"]
