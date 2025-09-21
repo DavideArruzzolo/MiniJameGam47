@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://bwho8cp6uu43i"]
+[gd_scene load_steps=13 format=3 uid="uid://bwho8cp6uu43i"]
 
 [ext_resource type="TileSet" uid="uid://dj443wtt2qlf8" path="res://asset/resources/tiles.tres" id="1_8in7i"]
 [ext_resource type="Script" uid="uid://pv0oa1uff376" path="res://scripts/level/Tutorial.gd" id="1_sp44e"]
 [ext_resource type="PackedScene" uid="uid://xirvjsv2xxhk" path="res://scenes/player/Player.tscn" id="1_u6ijr"]
 [ext_resource type="Script" uid="uid://btvv0j28b5udu" path="res://scripts/level/LevelManager.gd" id="2_8in7i"]
+[ext_resource type="Texture2D" uid="uid://4paemud5ldw5" path="res://asset/graphics/background/tutorial.png" id="2_nadmp"]
 [ext_resource type="PackedScene" uid="uid://fw3q1vurolkw" path="res://scenes/entities/LevelExit.tscn" id="3_eqnk5"]
 [ext_resource type="PackedScene" uid="uid://h440sw47h6bo" path="res://scenes/entities/button.tscn" id="5_eqnk5"]
 [ext_resource type="PackedScene" uid="uid://d11oeja7nrdi" path="res://scenes/entities/lever.tscn" id="5_tq43u"]
@@ -14,6 +15,11 @@
 
 [node name="Tutorial" type="Node2D"]
 script = ExtResource("1_sp44e")
+
+[node name="Industrial" type="Sprite2D" parent="."]
+position = Vector2(269.94385, 117.50006)
+scale = Vector2(5.157716, 4.8229165)
+texture = ExtResource("2_nadmp")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_8in7i")
