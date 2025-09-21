@@ -17,8 +17,8 @@
 script = ExtResource("1_sp44e")
 
 [node name="Industrial" type="Sprite2D" parent="."]
-position = Vector2(269.94385, 117.50006)
-scale = Vector2(5.157716, 4.8229165)
+position = Vector2(-68.9999, 89.0001)
+scale = Vector2(9.29688, 8.9125)
 texture = ExtResource("2_nadmp")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -366,7 +366,9 @@ grow_vertical = 0
 
 [node name="Label6" type="Label" parent="VBoxContainer14"]
 layout_mode = 2
-text = "Only the original egg can pass through this door."
+text = "Only the original egg can pass through this door.
+To open a door, you need to press and switch 
+a number of buttons and levers."
 horizontal_alignment = 1
 vertical_alignment = 1
 
