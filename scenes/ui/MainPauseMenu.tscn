@@ -23,37 +23,20 @@ offset_top = -58.0
 offset_right = 253.0
 offset_bottom = 422.0
 
-[node name="human" parent="MainMenu/MadeBy/ProfileHolder" index="0"]
-uri = "https://broth3rcast.itch.io/"
-
-[node name="human2" parent="MainMenu/MadeBy/ProfileHolder" index="1"]
-uri = "https://cuber1.itch.io/"
-
-[node name="human3" parent="MainMenu/MadeBy/ProfileHolder" index="2"]
-uri = ""
-
-[node name="TextureRect" parent="MainMenu/MadeBy/ProfileHolder/human3" index="0"]
-tooltip_text = "Cupcaaake"
-
-[node name="human5" parent="MainMenu/MadeBy/ProfileHolder" index="3"]
-tooltip_text = "R3G1S"
-uri = ""
-
-[node name="TextureRect" parent="MainMenu/MadeBy/ProfileHolder/human5" index="0"]
-tooltip_text = "R3G1S"
-
-[node name="human6" parent="MainMenu/MadeBy/ProfileHolder" index="4"]
-tooltip_text = "Senapi"
-uri = "https://inabluemoon.itch.io/"
-
-[node name="TextureRect" parent="MainMenu/MadeBy/ProfileHolder/human6" index="0"]
-tooltip_text = "Senapi"
-
-[node name="VBoxContainer" parent="MainMenu" index="4"]
+[node name="VBoxContainer" parent="MainMenu" index="3"]
 offset_left = -126.0
 offset_top = -287.0
 offset_right = 302.001
 offset_bottom = -47.9997
+
+[node name="TextureRect" parent="MainMenu/MadeBy/ProfileHolder/human3" index="0"]
+tooltip_text = "Cupcaaake"
+
+[node name="TextureRect" parent="MainMenu/MadeBy/ProfileHolder/human5" index="0"]
+tooltip_text = "R3G1S"
+
+[node name="TextureRect" parent="MainMenu/MadeBy/ProfileHolder/human6" index="0"]
+tooltip_text = "Senapi"
 
 [node name="OptionsMenu" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("2_stquu")]
 visible = false

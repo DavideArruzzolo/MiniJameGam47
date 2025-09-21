@@ -31,16 +31,16 @@ layer_0/tile_data = PackedInt32Array(39, 65536, 8, -65497, 458752, 1, -131033, 4
 position = Vector2(-1214, -579)
 collision_mask = 261
 
+[node name="PauseControl" parent="Player" instance=ExtResource("13_vawxq")]
+offset_left = -3220.0
+offset_top = -1789.9998
+offset_right = -3220.0
+offset_bottom = -1789.9998
+scale = Vector2(5, 5)
+
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-9.99994, 4.99986)
 scale = Vector2(5, 5)
-
-[node name="PauseControl" parent="Player" instance=ExtResource("13_vawxq")]
-offset_left = -3020.0
-offset_top = -1435.0
-offset_right = -3020.0
-offset_bottom = -1435.0
-scale = Vector2(4, 4)
 
 [node name="LevelManager" type="Node" parent="."]
 script = ExtResource("2_8in7i")

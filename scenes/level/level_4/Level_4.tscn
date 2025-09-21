@@ -56,7 +56,6 @@ tile_map_node = NodePath("../TileMap")
 cells_to_erase = Array[Vector2i]([Vector2i(-25, 24), Vector2i(-24, 24), Vector2i(-25, 25), Vector2i(-24, 23), Vector2i(-24, 22), Vector2i(-24, 21), Vector2i(-24, 20)])
 
 [node name="PauseControl" parent="." instance=ExtResource("9_585w3")]
-visible = false
 offset_left = -1604.0
 offset_top = -325.0
 offset_right = -1604.0
