@@ -1,18 +1,18 @@
-[gd_scene load_steps=12 format=3 uid="uid://bnxwxn76m10g4"]
+[gd_scene load_steps=12 format=3 uid="uid://cw650eticmc5g"]
 
-[ext_resource type="Script" uid="uid://cwivqrspex8dv" path="res://scripts/ui/Menu.gd" id="1_8s1oy"]
-[ext_resource type="Texture2D" uid="uid://bb73q0jt0xlai" path="res://asset/graphics/ui/button/startButton.png" id="2_m4dj8"]
-[ext_resource type="Texture2D" uid="uid://7tis2k56oekk" path="res://asset/graphics/ui/madeBy/broth3rcast.png" id="2_mn42h"]
-[ext_resource type="Texture2D" uid="uid://b1pmnsyq8gtje" path="res://asset/graphics/ui/madeBy/Cubey.png" id="3_3o66m"]
-[ext_resource type="Texture2D" uid="uid://b88tidtw4djh5" path="res://asset/graphics/ui/button/optionsButton.png" id="3_h2wd5"]
-[ext_resource type="Texture2D" uid="uid://fn6uvy82arqr" path="res://asset/graphics/ui/button/exitButton.png" id="4_dwflq"]
-[ext_resource type="Texture2D" uid="uid://c223sy52cx17e" path="res://asset/graphics/ui/madeBy/Cupcaaake.png" id="4_m4dj8"]
-[ext_resource type="Texture2D" uid="uid://6q51ya8l63o7" path="res://asset/graphics/ui/madeBy/R3G1S.png" id="6_dwflq"]
-[ext_resource type="Texture2D" uid="uid://46h0iowuqye0" path="res://asset/graphics/ui/madeBy/Senapi.png" id="7_5m6ga"]
-[ext_resource type="Texture2D" uid="uid://ue3h4f4obuym" path="res://asset/graphics/ui/logo/logo.png" id="11_h2wd5"]
-[ext_resource type="AudioStream" uid="uid://d0cssa1owvoo2" path="res://asset/audio/sfx/ui/ui-sound.mp3" id="12_ui_sound"]
+[ext_resource type="Script" uid="uid://cwivqrspex8dv" path="res://scripts/ui/Menu.gd" id="1_m3ie4"]
+[ext_resource type="Texture2D" uid="uid://bb73q0jt0xlai" path="res://asset/graphics/ui/button/startButton.png" id="2_3wlsb"]
+[ext_resource type="Texture2D" uid="uid://b88tidtw4djh5" path="res://asset/graphics/ui/button/optionsButton.png" id="3_uothp"]
+[ext_resource type="Texture2D" uid="uid://fn6uvy82arqr" path="res://asset/graphics/ui/button/exitButton.png" id="4_qtotc"]
+[ext_resource type="AudioStream" uid="uid://d0cssa1owvoo2" path="res://asset/audio/sfx/ui/ui-sound.mp3" id="5_7g3sk"]
+[ext_resource type="Texture2D" uid="uid://ue3h4f4obuym" path="res://asset/graphics/ui/logo/logo.png" id="6_bujqp"]
+[ext_resource type="Texture2D" uid="uid://7tis2k56oekk" path="res://asset/graphics/ui/madeBy/broth3rcast.png" id="7_bjk0l"]
+[ext_resource type="Texture2D" uid="uid://b1pmnsyq8gtje" path="res://asset/graphics/ui/madeBy/Cubey.png" id="8_y5d2p"]
+[ext_resource type="Texture2D" uid="uid://c223sy52cx17e" path="res://asset/graphics/ui/madeBy/Cupcaaake.png" id="9_mq8pi"]
+[ext_resource type="Texture2D" uid="uid://6q51ya8l63o7" path="res://asset/graphics/ui/madeBy/R3G1S.png" id="10_epfii"]
+[ext_resource type="Texture2D" uid="uid://46h0iowuqye0" path="res://asset/graphics/ui/madeBy/Senapi.png" id="11_0bs3u"]
 
-[node name="Menu" type="Control"]
+[node name="PauseMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,16 +21,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_8s1oy")
-
-[node name="Background" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
+script = ExtResource("1_m3ie4")
 
 [node name="MenuButtons" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -48,18 +39,18 @@ theme_override_constants/separation = 10
 
 [node name="StartButton" type="TextureButton" parent="MenuButtons"]
 layout_mode = 2
-texture_normal = ExtResource("2_m4dj8")
+texture_normal = ExtResource("2_3wlsb")
 
 [node name="OptionsButton" type="TextureButton" parent="MenuButtons"]
 layout_mode = 2
-texture_normal = ExtResource("3_h2wd5")
+texture_normal = ExtResource("3_uothp")
 
 [node name="ExitButton" type="TextureButton" parent="MenuButtons"]
 layout_mode = 2
-texture_normal = ExtResource("4_dwflq")
+texture_normal = ExtResource("4_qtotc")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_ui_sound")
+stream = ExtResource("5_7g3sk")
 volume_db = -12.0
 
 [node name="Logo" type="TextureRect" parent="."]
@@ -74,7 +65,7 @@ offset_bottom = 320.0
 grow_horizontal = 0
 rotation = 0.523599
 pivot_offset = Vector2(75, -90)
-texture = ExtResource("11_h2wd5")
+texture = ExtResource("6_bujqp")
 stretch_mode = 4
 
 [node name="MadeBy" type="VBoxContainer" parent="."]
@@ -109,7 +100,7 @@ uri = "https://www.google.com/"
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("2_mn42h")
+texture = ExtResource("7_bjk0l")
 
 [node name="human2" type="LinkButton" parent="MadeBy/ProfileHolder"]
 custom_minimum_size = Vector2(50, 50)
@@ -119,10 +110,10 @@ uri = "https://www.google.com/"
 
 [node name="TextureRect" type="TextureRect" parent="MadeBy/ProfileHolder/human2"]
 layout_mode = 0
-offset_right = 97.0
-offset_bottom = 97.0
+offset_right = 100.0
+offset_bottom = 101.0
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_3o66m")
+texture = ExtResource("8_y5d2p")
 
 [node name="human3" type="LinkButton" parent="MadeBy/ProfileHolder"]
 custom_minimum_size = Vector2(50, 50)
@@ -134,7 +125,7 @@ uri = "https://www.google.com/"
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("4_m4dj8")
+texture = ExtResource("9_mq8pi")
 
 [node name="human5" type="LinkButton" parent="MadeBy/ProfileHolder"]
 custom_minimum_size = Vector2(50, 50)
@@ -146,7 +137,7 @@ uri = "https://www.google.com/"
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("6_dwflq")
+texture = ExtResource("10_epfii")
 
 [node name="human6" type="LinkButton" parent="MadeBy/ProfileHolder"]
 custom_minimum_size = Vector2(50, 50)
@@ -158,7 +149,7 @@ uri = "https://www.google.com/"
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("7_5m6ga")
+texture = ExtResource("11_0bs3u")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
