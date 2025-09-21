@@ -6,6 +6,7 @@ class_name ObjButton
 @export var tile_map_layer_index: int = 0
 @export var allowed_clone_type: String = ""
 @export var egg_sprite_texture: Texture2D
+@export var displayText : String
 
 var egg_sprite_node: Sprite2D
 
@@ -22,6 +23,7 @@ func update_egg_sprite():
 		egg_sprite_node.visible = (allowed_clone_type != "")
 	else:
 		egg_sprite_node.visible = false
+	$Label.text = displayText
 
 var clonesInAreaCount = 0
 

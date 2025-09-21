@@ -28,7 +28,7 @@ layer_0/tile_data = PackedInt32Array(1507287, 0, 8, 1507288, 655360, 0, 1507289,
 zoom = Vector2(0.5, 0.5)
 
 [node name="Lever" parent="." instance=ExtResource("5_tujrl")]
-position = Vector2(-925.99994, -613.99994)
+position = Vector2(-937.99994, -614.00006)
 allowed_clone_type = "clone_3"
 egg_sprite_texture = ExtResource("5_rt1lu")
 
@@ -40,7 +40,6 @@ position = Vector2(910, -136)
 
 [node name="Door" parent="." node_paths=PackedStringArray("SwitchesToOpen") instance=ExtResource("6_1dky0")]
 position = Vector2(349, 664)
-scale = Vector2(0.2, 0.2)
 SwitchesToOpen = [NodePath("../Button"), NodePath("../Lever"), NodePath("../Lever2"), NodePath("../Lever3")]
 
 [node name="Button" parent="." node_paths=PackedStringArray("tile_map_node") instance=ExtResource("7_sbkt5")]
@@ -50,10 +49,10 @@ allowed_clone_type = "clone_1"
 egg_sprite_texture = ExtResource("7_g8gcf")
 
 [node name="Button2" parent="." node_paths=PackedStringArray("tile_map_node") instance=ExtResource("7_sbkt5")]
-position = Vector2(-936.0002, 543)
+position = Vector2(-1717, 541)
 tile_map_node = NodePath("../TileMap")
 cells_to_erase = Array[Vector2i]([Vector2i(6, -9), Vector2i(6, -8), Vector2i(6, -7), Vector2i(6, -6), Vector2i(6, -5), Vector2i(6, 20)])
 allowed_clone_type = "Player"
 
 [node name="Player" parent="." instance=ExtResource("3_i8xgn")]
-position = Vector2(-808.9999, -629.9999)
+position = Vector2(-1215, 643.9999)
