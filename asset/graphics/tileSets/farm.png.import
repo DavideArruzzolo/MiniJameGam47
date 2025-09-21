@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de5qypy8hy3k6"
-path="res://.godot/imported/walk_2.png-35d49f668d92a1b7903833d2acf14928.ctex"
+uid="uid://cfgajq7mgrbvj"
+path="res://.godot/imported/farm.png-6eb639b8fcc8933a448f95c78a107003.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/graphics/clone_2/walk/walk_2.png"
-dest_files=["res://.godot/imported/walk_2.png-35d49f668d92a1b7903833d2acf14928.ctex"]
+source_file="res://asset/graphics/tileSets/farm.png"
+dest_files=["res://.godot/imported/farm.png-6eb639b8fcc8933a448f95c78a107003.ctex"]
 
 [params]
 

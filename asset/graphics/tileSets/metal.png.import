@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de5qypy8hy3k6"
-path="res://.godot/imported/walk_2.png-35d49f668d92a1b7903833d2acf14928.ctex"
+uid="uid://b0ret5voxmo4k"
+path="res://.godot/imported/metal.png-90ffc229e2340f872fb578b8d838c4b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/graphics/clone_2/walk/walk_2.png"
-dest_files=["res://.godot/imported/walk_2.png-35d49f668d92a1b7903833d2acf14928.ctex"]
+source_file="res://asset/graphics/tileSets/metal.png"
+dest_files=["res://.godot/imported/metal.png-90ffc229e2340f872fb578b8d838c4b2.ctex"]
 
 [params]
 

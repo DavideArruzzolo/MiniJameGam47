@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de5qypy8hy3k6"
-path="res://.godot/imported/walk_2.png-35d49f668d92a1b7903833d2acf14928.ctex"
+uid="uid://d27x73tukfwl4"
+path="res://.godot/imported/sparkle.png-3cce0bd92d36ab624a43dad2c018a9a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/graphics/clone_2/walk/walk_2.png"
-dest_files=["res://.godot/imported/walk_2.png-35d49f668d92a1b7903833d2acf14928.ctex"]
+source_file="res://asset/graphics/tileSets/sparkle.png"
+dest_files=["res://.godot/imported/sparkle.png-3cce0bd92d36ab624a43dad2c018a9a5.ctex"]
 
 [params]
 
