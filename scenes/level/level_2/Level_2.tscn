@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cgvbym2tknmad"]
+[gd_scene load_steps=9 format=3 uid="uid://cgvbym2tknmad"]
 
 [ext_resource type="Script" uid="uid://btvv0j28b5udu" path="res://scripts/level/LevelManager.gd" id="2_tb0fl"]
 [ext_resource type="PackedScene" uid="uid://fw3q1vurolkw" path="res://scenes/entities/LevelExit.tscn" id="3_uruln"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://cmfy0xxjm72q0" path="res://scenes/entities/door.tscn" id="6_wbl0a"]
 [ext_resource type="Texture2D" uid="uid://fdnh12u2k4om" path="res://asset/graphics/ui/eggDisplayed/clone_1.png" id="7_6lw7p"]
 [ext_resource type="PackedScene" uid="uid://h440sw47h6bo" path="res://scenes/entities/button.tscn" id="7_ern0y"]
-[ext_resource type="Texture2D" uid="uid://bpi7litir1odf" path="res://asset/graphics/ui/eggDisplayed/clone_3.png" id="7_hv1dc"]
 [ext_resource type="Texture2D" uid="uid://woac546npe28" path="res://asset/graphics/ui/eggDisplayed/clone_2.png" id="7_syby4"]
 
 [node name="Level_1" type="Node2D"]
@@ -30,11 +29,11 @@ metadata/_custom_type_script = "uid://btvv0j28b5udu"
 position = Vector2(-274, 637)
 
 [node name="Player" parent="." instance=ExtResource("4_6mhm5")]
-position = Vector2(-876, 196)
+position = Vector2(-924, 228)
 
 [node name="Door" parent="." node_paths=PackedStringArray("SwitchesToOpen") instance=ExtResource("6_wbl0a")]
 position = Vector2(-275, 633)
-SwitchesToOpen = [NodePath("../2/Button"), NodePath("../5/Button8"), NodePath("../6/Button4")]
+SwitchesToOpen = [NodePath("../2/Button"), NodePath("../5/Button8"), null]
 
 [node name="1" type="Node2D" parent="."]
 
@@ -127,13 +126,6 @@ displayText = "5"
 
 [node name="6" type="Node2D" parent="."]
 position = Vector2(-715, 415)
-
-[node name="Button4" parent="6" node_paths=PackedStringArray("tile_map_node") instance=ExtResource("7_ern0y")]
-position = Vector2(698, 217)
-tile_map_node = NodePath("../../TileMap")
-cells_to_erase = Array[Vector2i]([Vector2i(-20, 25), Vector2i(-20, 24), Vector2i(-20, 23), Vector2i(-20, 22), Vector2i(-20, 21)])
-allowed_clone_type = "clone_3"
-egg_sprite_texture = ExtResource("7_hv1dc")
 
 [node name="RichTextLabel11" type="Label" parent="6"]
 offset_left = 321.0
