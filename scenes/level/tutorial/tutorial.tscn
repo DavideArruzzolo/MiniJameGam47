@@ -17,8 +17,8 @@
 script = ExtResource("1_sp44e")
 
 [node name="Industrial" type="Sprite2D" parent="."]
-position = Vector2(269.944, 117.5)
-scale = Vector2(5.15772, 4.82292)
+position = Vector2(-68.9999, 89.0001)
+scale = Vector2(9.29688, 8.9125)
 texture = ExtResource("2_nadmp")
 
 [node name="TileMap" type="TileMap" parent="."]
