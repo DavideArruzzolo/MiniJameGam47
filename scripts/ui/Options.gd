@@ -3,12 +3,9 @@ extends Control
 @onready var slider = $MenuButtons/HSlider
 @onready var ui_sound = $AudioStreamPlayer
 
-const MIN_VOLUME_DB = -80.0
-const MAX_VOLUME_DB = 0.0
-
 
 func _ready() -> void:
-	$MenuButtons/HSlider.value = 25
+	slider.value = BackgroundMusic.volume
 	$MenuButtons/TextureButton.mouse_entered.connect(_on_button_mouse_entered)
 
 	var made_by_buttons = [
@@ -25,13 +22,7 @@ func _ready() -> void:
 
 
 func _on_h_slider_value_changed(slider_value: float):
-	ui_sound.play()
-	if slider_value == 0:
-		BackgroundMusic.volume_db = MIN_VOLUME_DB
-		BackgroundMusic.stream_paused = true
-	else:
-		BackgroundMusic.volume_db = linear_to_db(slider_value / 100.0)
-		BackgroundMusic.stream_paused = false
+	BackgroundMusic.set_volume(slider_value)
 
 
 func _on_back_button_pressed() -> void:
