@@ -2,7 +2,7 @@
 
 > A Puzzle-Platformer made in 2.5 days for Mini Jame Gam 47. 
 
-## 🏆 Jam Results
+## 🏆 Jam Results - https://itch.io/jam/mini-jame-gam-47/results
 Out of 98 entries submitted, EggHeadz achieved the following rankings:
 * **Theme Implementation:** #1 (Score: 4.356)
 * **Special Object Implementation:** #4 (Score: 4.067)
